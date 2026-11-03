@@ -1,0 +1,1367 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daoudi Mohamed Yacine — Embedded Systems Engineer</title>
+<meta name="description" content="Portfolio of Daoudi Mohamed Yacine, final-year Computer Engineering student specializing in embedded systems: bare-metal and RTOS firmware, embedded Linux, and edge AI on STM32, ESP32, and Raspberry Pi.">
+<meta name="author" content="Daoudi Mohamed Yacine">
+<meta name="theme-color" content="#06080b">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Daoudi Mohamed Yacine — Embedded Systems Engineer">
+<meta property="og:description" content="Firmware, embedded Linux &amp; edge AI — engineered close to the metal.">
+<meta property="og:url" content="https://pycine.github.io/">
+<meta property="og:image" content="https://pycine.github.io/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Daoudi Mohamed Yacine — Embedded Systems Engineer">
+<meta name="twitter:description" content="Firmware, embedded Linux &amp; edge AI — engineered close to the metal.">
+<meta name="twitter:image" content="https://pycine.github.io/assets/og.png">
+<link rel="canonical" href="https://pycine.github.io/">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/jetbrains-mono.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/styles.css">
+<script>document.documentElement.classList.add('js');</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Daoudi Mohamed Yacine",
+  "jobTitle": "Embedded Systems Engineer",
+  "email": "mailto:mohamedyacine.daoudi@proton.me",
+  "telephone": "+21694510518",
+  "url": "https://pycine.github.io/",
+  "sameAs": [
+    "https://github.com/pycine",
+    "https://www.linkedin.com/in/daoudi-med-yacine"
+  ],
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "ESPRIT" },
+    { "@type": "CollegeOrUniversity", "name": "Preparatory Institute for Engineering Studies (IPEIG)" }
+  ],
+  "knowsAbout": ["Embedded systems", "Firmware", "Zephyr RTOS", "Embedded Linux", "Yocto", "STM32", "ESP32", "Edge AI", "IoT"]
+}
+</script>
+</head>
+<body id="top">
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<svg class="svg-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2.17c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.15v3.19c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7.5 8.5 6 8.5-6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 3.5 9 3l1.6 4-2 1.4a12 12 0 0 0 5 5l1.4-2 4 1.6-.5 2.4a2.5 2.5 0 0 1-2.7 2A16.5 16.5 0 0 1 3.1 6.2a2.5 2.5 0 0 1 2-2.7Z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-5.7 7-11a7 7 0 1 0-14 0c0 5.3 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M15 5.5A2.5 2.5 0 0 0 12.5 3H6a2.5 2.5 0 0 0-2.5 2.5V13"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12.5 5 5L20 6.5"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+  <symbol id="i-chip" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2.5"/><path d="M9.5 3v4M14.5 3v4M9.5 17v4M14.5 17v4M3 9.5h4M3 14.5h4M17 9.5h4M17 14.5h4"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 12.5 9 5 9-5M3 16.5l9 5 9-5"/></symbol>
+  <symbol id="i-nodes" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.2"/><circle cx="5" cy="18" r="2.2"/><circle cx="19" cy="18" r="2.2"/><path d="M10.5 6.8 6.5 16M13.5 6.8 17.5 16M7 18h10"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 20 6v6c0 4.6-3.4 7.6-8 9-4.6-1.4-8-4.4-8-9V6l8-3Z"/><path d="m8.5 12 2.4 2.4 4.6-5"/></symbol>
+  <symbol id="i-radio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/><path d="M8.5 8.5a5 5 0 0 0 0 7M15.5 15.5a5 5 0 0 0 0-7M5.6 5.6a9 9 0 0 0 0 12.8M18.4 18.4a9 9 0 0 0 0-12.8"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.8 12 5.8 21.5 12 21.5 12 18 18.2 12 18.2 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3.2"/></symbol>
+  <symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.5 6.5a4 4 0 0 0 5 5L9.5 21.5a2.8 2.8 0 0 1-4-4L15.5 7.5"/><path d="m6 3 4 4M3 6l4 4"/></symbol>
+  <symbol id="i-cap" viewBox="0 0 24 24"><path d="m2.5 8.5 9.5-4 9.5 4-9.5 4-9.5-4Z"/><path d="M6.5 10.8V15c0 1.7 3 3.2 5.5 3.2s5.5-1.5 5.5-3.2v-4.2M21.5 8.5V14"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+  <symbol id="i-terminal" viewBox="0 0 24 24"><path d="m4 7 5 5-5 5M12 17h8"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></symbol>
+</svg>
+
+<div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+<header class="site-header" id="site-header">
+  <div class="container nav-inner">
+    <a class="brand" href="#top" aria-label="Daoudi Mohamed Yacine — back to top">
+      <span class="brand-mark" aria-hidden="true">
+        <svg class="icon" viewBox="0 0 24 24"><use href="#i-chip"/></svg>
+      </span>
+      <span class="brand-text">daoudi<span class="brand-dot">.</span></span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Stack</a>
+      <a href="#education">Education</a>
+      <a href="#credentials">Credentials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a class="btn btn-ghost btn-sm nav-resume" href="assets/resume.pdf" target="_blank" rel="noopener">
+        Résumé <svg class="icon" viewBox="0 0 24 24"><use href="#i-arrow-up-right"/></svg>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <svg class="icon menu-icon" viewBox="0 0 24 24"><use href="#i-menu"/></svg>
+        <svg class="icon close-icon" viewBox="0 0 24 24"><use href="#i-close"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <nav aria-label="Mobile">
+      <a href="#about"><span>01</span>About</a>
+      <a href="#experience"><span>02</span>Experience</a>
+      <a href="#projects"><span>03</span>Projects</a>
+      <a href="#skills"><span>04</span>Stack</a>
+      <a href="#education"><span>05</span>Education</a>
+      <a href="#credentials"><span>06</span>Credentials</a>
+      <a href="#contact"><span>07</span>Contact</a>
+    </nav>
+    <a class="btn btn-primary mobile-resume" href="assets/resume.pdf" target="_blank" rel="noopener">
+      Download résumé <svg class="icon" viewBox="0 0 24 24"><use href="#i-download"/></svg>
+    </a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============================ HERO ============================ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="status-pill" data-reveal>
+          <span class="status-led" aria-hidden="true"></span>
+          Open to end-of-studies internships
+          <span class="status-sep" aria-hidden="true">/</span>
+          <span class="status-sub">Embedded systems</span>
+        </p>
+
+        <h1 class="hero-title" id="hero-title" data-reveal style="--d:.06s">
+          Daoudi
+          <span class="hero-title-line">Mohamed Yacine<span class="accent-dot">.</span></span>
+        </h1>
+
+        <p class="hero-tagline" data-reveal style="--d:.12s">
+          Firmware, embedded Linux &amp; edge AI — <span class="grad">engineered close to the metal.</span>
+        </p>
+
+        <p class="hero-lede" data-reveal style="--d:.18s">
+          Final-year Computer Engineering student at ESPRIT. I build reliable low-level systems:
+          bare-metal STM32 firmware, Zephyr RTOS services, and custom Yocto distributions that
+          recover when the physical world misbehaves.
+        </p>
+
+        <div class="hero-actions" data-reveal style="--d:.24s">
+          <a class="btn btn-primary" href="#projects">
+            Explore projects
+            <svg class="icon" viewBox="0 0 24 24"><use href="#i-arrow-right"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="assets/resume.pdf" download="Daoudi_Mohamed_Yacine_CV.pdf">
+            Download CV
+            <svg class="icon" viewBox="0 0 24 24"><use href="#i-download"/></svg>
+          </a>
+          <div class="hero-socials">
+            <a href="https://github.com/pycine" target="_blank" rel="noopener" aria-label="GitHub profile" title="GitHub">
+              <svg class="icon icon--solid" viewBox="0 0 24 24"><use href="#i-github"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/daoudi-med-yacine" target="_blank" rel="noopener" aria-label="LinkedIn profile" title="LinkedIn">
+              <svg class="icon icon--solid" viewBox="0 0 24 24"><use href="#i-linkedin"/></svg>
+            </a>
+            <a href="mailto:mohamedyacine.daoudi@proton.me" aria-label="Send an email" title="Email">
+              <svg class="icon" viewBox="0 0 24 24"><use href="#i-mail"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-meta" data-reveal style="--d:.3s">
+          <span><svg class="icon" viewBox="0 0 24 24"><use href="#i-pin"/></svg>Tunisia · UTC+1</span>
+          <span class="meta-divider" aria-hidden="true"></span>
+          <span><svg class="icon" viewBox="0 0 24 24"><use href="#i-chip"/></svg>Bare metal → Linux</span>
+          <span class="meta-divider" aria-hidden="true"></span>
+          <span class="meta-accent">Available now</span>
+        </div>
+      </div>
+
+      <div class="hero-visual" data-reveal style="--d:.2s">
+        <div class="board-float">
+          <div class="board-tilt" id="board-tilt">
+            <div class="board-glow" aria-hidden="true"></div>
+
+            <svg class="board" viewBox="0 0 560 560" role="img" aria-label="Stylised circuit board illustration with a central microcontroller, copper traces, and animated signal pulses">
+              <defs>
+                <linearGradient id="board-bg" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#0e171e"/>
+                  <stop offset=".55" stop-color="#0a1015"/>
+                  <stop offset="1" stop-color="#070b0f"/>
+                </linearGradient>
+                <linearGradient id="chip-fill" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#17262e"/>
+                  <stop offset="1" stop-color="#0c151a"/>
+                </linearGradient>
+                <radialGradient id="board-halo" cx="50%" cy="50%" r="50%">
+                  <stop offset="0" stop-color="#4becbb" stop-opacity=".2"/>
+                  <stop offset=".65" stop-color="#4becbb" stop-opacity=".05"/>
+                  <stop offset="1" stop-color="#4becbb" stop-opacity="0"/>
+                </radialGradient>
+                <pattern id="board-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                  <path d="M40 0H0V40" fill="none" stroke="#16242c" stroke-width="1"/>
+                </pattern>
+                <clipPath id="board-clip"><rect x="16" y="16" width="528" height="528" rx="32"/></clipPath>
+              </defs>
+
+              <circle cx="280" cy="280" r="260" fill="url(#board-halo)"/>
+              <g>
+                <rect x="16" y="16" width="528" height="528" rx="32" fill="url(#board-bg)" stroke="#1e2f39"/>
+                <g clip-path="url(#board-clip)">
+                  <rect x="16" y="16" width="528" height="528" fill="url(#board-grid)" opacity=".7"/>
+                  <circle cx="280" cy="280" r="190" fill="none" stroke="#1a2d35" stroke-dasharray="2 8"/>
+                </g>
+
+                <!-- mounting holes -->
+                <g fill="#070b0e" stroke="#263a44">
+                  <circle cx="52" cy="52" r="7"/><circle cx="508" cy="52" r="7"/>
+                  <circle cx="52" cy="508" r="7"/><circle cx="508" cy="508" r="7"/>
+                </g>
+                <g fill="none" stroke="#3a545e">
+                  <circle cx="52" cy="52" r="2.5"/><circle cx="508" cy="52" r="2.5"/>
+                  <circle cx="52" cy="508" r="2.5"/><circle cx="508" cy="508" r="2.5"/>
+                </g>
+
+                <!-- copper traces -->
+                <g fill="none" stroke="#2a4650" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M164 220H118V150H64"/>
+                  <path d="M164 260H96"/>
+                  <path d="M164 300H120V366H64"/>
+                  <path d="M396 220H442V156H500"/>
+                  <path d="M396 260H470"/>
+                  <path d="M396 300H446V364H500"/>
+                  <path d="M220 164V118H164V64"/>
+                  <path d="M280 164V104"/>
+                  <path d="M340 164V118H392V72"/>
+                  <path d="M220 396V442H164V500"/>
+                  <path d="M280 396V462"/>
+                  <path d="M340 396V440H392V492"/>
+                </g>
+                <g fill="#1d333c" stroke="#31505b">
+                  <rect x="58" y="145" width="12" height="10" rx="2"/>
+                  <rect x="90" y="255" width="12" height="10" rx="2"/>
+                  <rect x="58" y="361" width="12" height="10" rx="2"/>
+                  <rect x="494" y="151" width="12" height="10" rx="2"/>
+                  <rect x="464" y="255" width="12" height="10" rx="2"/>
+                  <rect x="494" y="359" width="12" height="10" rx="2"/>
+                  <rect x="158" y="59" width="12" height="10" rx="2"/>
+                  <rect y="99" x="274" width="12" height="10" rx="2"/>
+                  <rect x="386" y="67" width="12" height="10" rx="2"/>
+                  <rect x="158" y="495" width="12" height="10" rx="2"/>
+                  <rect x="274" y="457" width="12" height="10" rx="2"/>
+                  <rect x="386" y="487" width="12" height="10" rx="2"/>
+                </g>
+
+                <!-- highlighted signal traces -->
+                <g fill="none" stroke="#4becbb" stroke-opacity=".55" stroke-width="1.5">
+                  <path class="sig" d="M396 240H460V320H510"/>
+                  <path class="sig" d="M164 240H104V196H64" style="animation-delay:-2s"/>
+                </g>
+
+                <!-- chip pins -->
+                <g fill="#223a44" stroke="#355661">
+                  <g>
+                    <rect x="162" y="202" width="18" height="7" rx="2"/><rect x="162" y="222" width="18" height="7" rx="2"/>
+                    <rect x="162" y="242" width="18" height="7" rx="2"/><rect x="162" y="262" width="18" height="7" rx="2"/>
+                    <rect x="162" y="282" width="18" height="7" rx="2"/><rect x="162" y="302" width="18" height="7" rx="2"/>
+                    <rect x="162" y="322" width="18" height="7" rx="2"/><rect x="162" y="342" width="18" height="7" rx="2"/>
+                  </g>
+                  <g>
+                    <rect x="380" y="202" width="18" height="7" rx="2"/><rect x="380" y="222" width="18" height="7" rx="2"/>
+                    <rect x="380" y="242" width="18" height="7" rx="2"/><rect x="380" y="262" width="18" height="7" rx="2"/>
+                    <rect x="380" y="282" width="18" height="7" rx="2"/><rect x="380" y="302" width="18" height="7" rx="2"/>
+                    <rect x="380" y="322" width="18" height="7" rx="2"/><rect x="380" y="342" width="18" height="7" rx="2"/>
+                  </g>
+                  <g>
+                    <rect x="202" y="162" width="7" height="18" rx="2"/><rect x="222" y="162" width="7" height="18" rx="2"/>
+                    <rect x="242" y="162" width="7" height="18" rx="2"/><rect x="262" y="162" width="7" height="18" rx="2"/>
+                    <rect x="282" y="162" width="7" height="18" rx="2"/><rect x="302" y="162" width="7" height="18" rx="2"/>
+                    <rect x="322" y="162" width="7" height="18" rx="2"/><rect x="342" y="162" width="7" height="18" rx="2"/>
+                  </g>
+                  <g>
+                    <rect x="202" y="380" width="7" height="18" rx="2"/><rect x="222" y="380" width="7" height="18" rx="2"/>
+                    <rect x="242" y="380" width="7" height="18" rx="2"/><rect x="262" y="380" width="7" height="18" rx="2"/>
+                    <rect x="282" y="380" width="7" height="18" rx="2"/><rect x="302" y="380" width="7" height="18" rx="2"/>
+                    <rect x="322" y="380" width="7" height="18" rx="2"/><rect x="342" y="380" width="7" height="18" rx="2"/>
+                  </g>
+                </g>
+
+                <!-- chip body -->
+                <rect x="180" y="180" width="200" height="200" rx="18" fill="url(#chip-fill)" stroke="#3c6b66" stroke-opacity=".8"/>
+                <rect x="194" y="194" width="172" height="172" rx="11" fill="none" stroke="#243f47"/>
+                <text x="208" y="222" font-family="monospace" font-size="8" letter-spacing="1.5" fill="#54727b">QFP-64</text>
+                <circle cx="356" cy="212" r="3" fill="#4becbb"/>
+                <circle cx="356" cy="212" r="7" fill="none" stroke="#4becbb" stroke-opacity=".3"/>
+                <text x="280" y="278" text-anchor="middle" font-family="monospace" font-size="34" font-weight="500" letter-spacing="1" fill="#e8fbf5">MYD-01</text>
+                <text x="280" y="300" text-anchor="middle" font-family="monospace" font-size="9" letter-spacing="2.4" fill="#7e9aa1">CORTEX-M · MCU</text>
+                <path d="M232 318H328" stroke="#264049"/>
+                <text x="280" y="336" text-anchor="middle" font-family="monospace" font-size="7.5" letter-spacing="1.6" fill="#5d7a82">3V3 · GND · SWD</text>
+
+                <!-- crystal + caps -->
+                <g stroke="#2a4650" fill="#0d171c">
+                  <rect x="94" y="432" width="34" height="20" rx="4"/>
+                  <rect x="404" y="424" width="14" height="24" rx="3"/>
+                  <rect x="428" y="424" width="14" height="24" rx="3"/>
+                </g>
+                <text x="94" y="468" font-family="monospace" font-size="7" letter-spacing="1" fill="#4d6870">XTAL</text>
+
+                <!-- antenna meander -->
+                <path d="M452 96h26v14h-16v14h26v14h-16v14h26" fill="none" stroke="#ffb26b" stroke-opacity=".65" stroke-width="1.6"/>
+
+                <!-- labels -->
+                <g font-family="monospace" font-size="7.5" letter-spacing="1.4" fill="#5d7a82">
+                  <text x="38" y="140">SWD</text>
+                  <text x="470" y="146">UART</text>
+                  <text x="476" y="354">SPI</text>
+                  <text x="38" y="352">I2C</text>
+                  <text x="150" y="50">3V3</text>
+                  <text x="390" y="60">RF</text>
+                  <text x="146" y="518">GND</text>
+                  <text x="396" y="510">TLS</text>
+                </g>
+
+                <!-- animated pulses -->
+                <circle class="pulse-dot" r="3" fill="#4becbb">
+                  <animateMotion dur="5s" repeatCount="indefinite" path="M396 240H460V320H510"/>
+                </circle>
+                <circle class="pulse-dot" r="2.5" fill="#4becbb" opacity=".8">
+                  <animateMotion dur="6.5s" begin="-2s" repeatCount="indefinite" path="M164 240H104V196H64"/>
+                </circle>
+                <circle r="2.5" fill="#ffb26b" opacity=".8">
+                  <animateMotion dur="7s" begin="-4s" repeatCount="indefinite" path="M280 396V462"/>
+                </circle>
+
+                <!-- board corners -->
+                <g fill="none" stroke="#4becbb" stroke-opacity=".35">
+                  <path d="M24 60V24h36M536 24h-36M24 500v36h36M536 536h-36"/>
+                </g>
+                <text x="44" y="536" font-family="monospace" font-size="7" letter-spacing="1.6" fill="#3f5a62">36.8065N / 10.1815E</text>
+                <text x="516" y="44" text-anchor="end" font-family="monospace" font-size="7" letter-spacing="1.6" fill="#3f5a62">REV 01</text>
+              </g>
+            </svg>
+
+            <div class="boot-card" role="img" aria-label="Illustrative boot log showing secure boot, Zephyr RTOS, TLS and LittleFS starting successfully">
+              <div class="boot-head">
+                <span class="boot-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                <span>myd@board:~</span>
+                <span class="boot-tty">TTY0</span>
+              </div>
+              <pre class="boot-log"><span style="--i:0"><b>$</b> ./myd --init</span><span style="--i:1"><em>[ ok ]</em> secure boot chain</span><span style="--i:2"><em>[ ok ]</em> zephyr · 4 threads</span><span style="--i:3"><em>[ ok ]</em> tls 1.3 · https</span><span style="--i:4"><em>[ ok ]</em> littlefs · offline</span><span class="boot-cursor" style="--i:5"><b>$</b> <i class="caret"></i></span></pre>
+            </div>
+
+            <span class="float-tag float-tag--one" aria-hidden="true"><i></i>STM32</span>
+            <span class="float-tag float-tag--two" aria-hidden="true"><i></i>Zephyr RTOS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a class="scroll-cue" href="#about" aria-label="Scroll to about section">
+      <span>Scroll</span>
+      <i aria-hidden="true"></i>
+    </a>
+  </section>
+
+  <!-- ============================ MARQUEE ============================ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-group">
+        <span>C</span><span class="mq-dot"></span><span>C++</span><span class="mq-dot"></span><span>Rust</span><span class="mq-dot"></span><span>Python</span><span class="mq-dot"></span><span>Zephyr RTOS</span><span class="mq-dot"></span><span>STM32</span><span class="mq-dot"></span><span>ESP32</span><span class="mq-dot"></span><span>ARM Cortex-M</span><span class="mq-dot"></span><span>Embedded Linux</span><span class="mq-dot"></span><span>Yocto</span><span class="mq-dot"></span><span>Buildroot</span><span class="mq-dot"></span><span>U-Boot</span><span class="mq-dot"></span><span>FreeRTOS</span><span class="mq-dot"></span><span>BLE</span><span class="mq-dot"></span><span>LoRa</span><span class="mq-dot"></span><span>MQTT</span><span class="mq-dot"></span><span>TLS</span><span class="mq-dot"></span><span>YOLO</span><span class="mq-dot"></span><span>X-CUBE-AI</span><span class="mq-dot"></span>
+      </div>
+      <div class="marquee-group">
+        <span>C</span><span class="mq-dot"></span><span>C++</span><span class="mq-dot"></span><span>Rust</span><span class="mq-dot"></span><span>Python</span><span class="mq-dot"></span><span>Zephyr RTOS</span><span class="mq-dot"></span><span>STM32</span><span class="mq-dot"></span><span>ESP32</span><span class="mq-dot"></span><span>ARM Cortex-M</span><span class="mq-dot"></span><span>Embedded Linux</span><span class="mq-dot"></span><span>Yocto</span><span class="mq-dot"></span><span>Buildroot</span><span class="mq-dot"></span><span>U-Boot</span><span class="mq-dot"></span><span>FreeRTOS</span><span class="mq-dot"></span><span>BLE</span><span class="mq-dot"></span><span>LoRa</span><span class="mq-dot"></span><span>MQTT</span><span class="mq-dot"></span><span>TLS</span><span class="mq-dot"></span><span>YOLO</span><span class="mq-dot"></span><span>X-CUBE-AI</span><span class="mq-dot"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================ STATS ============================ -->
+  <section class="stats" aria-label="Quick facts">
+    <div class="container stats-grid">
+      <div class="stat" data-reveal>
+        <span class="stat-num" data-count="2" data-pad="2">02</span>
+        <span class="stat-label">Industry internships</span>
+      </div>
+      <div class="stat" data-reveal style="--d:.08s">
+        <span class="stat-num" data-count="5" data-pad="2">05</span>
+        <span class="stat-label">Embedded projects</span>
+      </div>
+      <div class="stat" data-reveal style="--d:.16s">
+        <span class="stat-num" data-count="6" data-pad="2">06</span>
+        <span class="stat-label">Certifications</span>
+      </div>
+      <div class="stat" data-reveal style="--d:.24s">
+        <span class="stat-num" data-count="8" data-pad="2">08</span>
+        <span class="stat-label">Skill domains</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ ABOUT ============================ -->
+  <section class="section about" id="about" aria-labelledby="about-title">
+    <div class="container">
+      <header class="section-head" data-reveal>
+        <p class="kicker"><span class="kicker-num">01</span><span class="kicker-slash">/</span> About</p>
+        <h2 id="about-title">Close to the metal.<br><span class="h2-muted">Wide in scope.</span></h2>
+      </header>
+
+      <div class="about-grid">
+        <div class="about-copy" data-reveal>
+          <p class="lead">
+            I'm Daoudi Mohamed Yacine, a final-year Computer Engineering student at ESPRIT
+            specializing in embedded systems. My work sits at the boundary between software and
+            silicon.
+          </p>
+          <p>
+            At STMicroelectronics I built a configuration-driven provisioning engine for the
+            Secure Firmware Install toolchain. At Gewinner I developed reusable Zephyr firmware
+            with BLE provisioning, TLS/REST connectivity, and an offline-first filesystem that
+            survives outages and reboots.
+          </p>
+          <p>
+            I care about deterministic behavior, secure boot, and systems that recover gracefully
+            when the physical world misbehaves — from a first-stage bootloader to an edge model
+            making a decision on a microcontroller.
+          </p>
+          <p class="about-sig">
+            <span class="sig-line" aria-hidden="true"></span>
+            Currently seeking an end-of-studies internship
+          </p>
+        </div>
+
+        <div class="datasheet" role="group" data-reveal style="--d:.1s" aria-label="Profile datasheet">
+          <div class="datasheet-head">
+            <span><i class="mini-led" aria-hidden="true"></i>MYD-01 / DATASHEET</span>
+            <span>REV. 01</span>
+          </div>
+          <dl class="datasheet-rows">
+            <div><dt>Role</dt><dd>Embedded Systems Engineer</dd></div>
+            <div><dt>Focus</dt><dd>Firmware · Embedded Linux · Edge AI</dd></div>
+            <div><dt>Stack</dt><dd>C / C++ / Rust / Python / Bash</dd></div>
+            <div><dt>Targets</dt><dd>ARM Cortex-M · STM32 · ESP32 · RPi</dd></div>
+            <div><dt>Status</dt><dd class="status-cell"><i class="mini-led mini-led--pulse" aria-hidden="true"></i>Open to internships</dd></div>
+          </dl>
+          <div class="datasheet-barcode" aria-hidden="true"></div>
+          <div class="datasheet-foot">
+            <span>TUNISIA · UTC+1</span>
+            <span>MYD-2026</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="focus-grid">
+        <article class="focus-card" data-reveal>
+          <span class="focus-icon"><svg class="icon" viewBox="0 0 24 24"><use href="#i-chip"/></svg></span>
+          <span class="focus-num">/01</span>
+          <h3>Firmware &amp; RTOS</h3>
+          <p>Bare-metal C on ARM Cortex-M and multi-threaded Zephyr or FreeRTOS services built around real-time constraints.</p>
+        </article>
+        <article class="focus-card" data-reveal style="--d:.08s">
+          <span class="focus-icon"><svg class="icon" viewBox="0 0 24 24"><use href="#i-layers"/></svg></span>
+          <span class="focus-num">/02</span>
+          <h3>Embedded Linux</h3>
+          <p>Yocto and Buildroot images, U-Boot boot flows, and fault-tolerant update and recovery paths.</p>
+        </article>
+        <article class="focus-card" data-reveal style="--d:.16s">
+          <span class="focus-icon"><svg class="icon" viewBox="0 0 24 24"><use href="#i-nodes"/></svg></span>
+          <span class="focus-num">/03</span>
+          <h3>Edge AI &amp; IoT</h3>
+          <p>On-device inference with X-CUBE-AI and YOLO, plus BLE, LoRa, MQTT and TLS connectivity.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ EXPERIENCE ============================ -->
+  <section class="section experience" id="experience" aria-labelledby="experience-title">
+    <div class="container">
+      <header class="section-head" data-reveal>
+        <p class="kicker"><span class="kicker-num">02</span><span class="kicker-slash">/</span> Experience</p>
+        <h2 id="experience-title">Built in industry.<br><span class="h2-muted">Proven on hardware.</span></h2>
+        <p class="section-sub">Two internships spent in codebases where a single register write matters — secure provisioning tooling and production-bound IoT firmware.</p>
+      </header>
+
+      <div class="timeline">
+        <article class="exp-card" data-reveal>
+          <div class="exp-side">
+            <span class="exp-index">01 / 02</span>
+            <span class="exp-logo" aria-hidden="true">ST</span>
+            <div class="exp-meta">
+              <span class="exp-period">Jul — Sep 2025</span>
+              <span class="exp-type">Internship</span>
+            </div>
+          </div>
+          <div class="exp-body">
+            <p class="company">STMicroelectronics</p>
+            <h3>Firmware Security Engineer</h3>
+            <p class="exp-role">Secure Firmware Install toolchain &amp; firmware provisioning</p>
+            <ul class="exp-list">
+              <li>Designed and built a configuration-driven provisioning engine for the Secure Firmware Install (SFI) toolchain, replacing per-board hardcoded logic.</li>
+              <li>New STM32 devices are now supported through a single configuration file, with no source changes required.</li>
+            </ul>
+            <ul class="chip-list">
+              <li class="chip">Secure Boot</li>
+              <li class="chip">Secure Firmware Install</li>
+              <li class="chip">STM32</li>
+              <li class="chip">Toolchain</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="exp-card" data-reveal>
+          <div class="exp-side">
+            <span class="exp-index">02 / 02</span>
+            <span class="exp-logo" aria-hidden="true">GW</span>
+            <div class="exp-meta">
+              <span class="exp-period">Jul — Sep 2026</span>
+              <span class="exp-type">Internship</span>
+            </div>
+          </div>
+          <div class="exp-body">
+            <p class="company">Gewinner</p>
+            <h3>IoT Firmware Engineer</h3>
+            <p class="exp-role">IoT firmware &amp; embedded networking on Zephyr RTOS</p>
+            <ul class="exp-list">
+              <li>Developed reusable multi-threaded IoT firmware on Zephyr RTOS: BLE-based Wi-Fi provisioning, secure HTTPS/TLS communication with a REST backend, and an offline-first LittleFS store that survives outages and reboots.</li>
+              <li>Validated in an RFID access-control and attendance system, including a register-level MFRC522 SPI driver.</li>
+            </ul>
+            <ul class="chip-list">
+              <li class="chip">Zephyr RTOS</li>
+              <li class="chip">BLE</li>
+              <li class="chip">TLS</li>
+              <li class="chip">LittleFS</li>
+              <li class="chip">SPI</li>
+              <li class="chip">MFRC522</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ PROJECTS ============================ -->
+  <section class="section projects" id="projects" aria-labelledby="projects-title">
+    <div class="container">
+      <header class="section-head" data-reveal>
+        <p class="kicker"><span class="kicker-num">03</span><span class="kicker-slash">/</span> Selected work</p>
+        <h2 id="projects-title">Systems that run<br><span class="h2-muted">on real hardware.</span></h2>
+        <p class="section-sub">Five builds across firmware, embedded Linux, and edge AI — each one validated on a physical target or in emulation.</p>
+      </header>
+
+      <div class="project-grid">
+
+        <!-- SeaDrone -->
+        <article class="project project--feature" data-reveal>
+          <div class="project-art">
+            <svg class="art-svg" viewBox="0 0 640 360" role="img" aria-label="Radar-style illustration of the SeaDrone with four rotors and detected contact blips">
+              <defs>
+                <linearGradient id="sea-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a151a"/><stop offset="1" stop-color="#060a0d"/></linearGradient>
+                <radialGradient id="sea-glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#4becbb" stop-opacity=".16"/><stop offset="1" stop-color="#4becbb" stop-opacity="0"/></radialGradient>
+                <linearGradient id="sea-sweep" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4becbb" stop-opacity=".3"/><stop offset="1" stop-color="#4becbb" stop-opacity="0"/></linearGradient>
+                <pattern id="sea-grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#162831" stroke-width="1"/></pattern>
+              </defs>
+              <rect width="640" height="360" fill="url(#sea-bg)"/>
+              <rect width="640" height="360" fill="url(#sea-grid)" opacity=".5"/>
+              <circle cx="330" cy="184" r="210" fill="url(#sea-glow)"/>
+              <g fill="none" stroke="#294650" stroke-width="1">
+                <circle cx="330" cy="184" r="150" stroke-dasharray="2 7"/>
+                <circle cx="330" cy="184" r="104" opacity=".8"/>
+                <circle cx="330" cy="184" r="58" opacity=".5"/>
+                <path d="M330 16v336M162 184h336" stroke-dasharray="3 8" opacity=".55"/>
+              </g>
+              <g class="radar-sweep" style="transform-origin:330px 184px">
+                <path d="M330 184 330 40 A144 144 0 0 1 452 104Z" fill="url(#sea-sweep)"/>
+                <line x1="330" y1="184" x2="330" y2="40" stroke="#4becbb" stroke-opacity=".45"/>
+              </g>
+              <g>
+                <circle cx="330" cy="184" r="78" fill="#081014" fill-opacity=".55" stroke="#1f3a43" stroke-dasharray="2 4"/>
+                <path d="M292 146 306 160M368 146 354 160M292 222 306 208M368 222 354 208" stroke="#63f3cd" stroke-width="2" stroke-linecap="round" opacity=".9"/>
+                <g fill="#0b1519" stroke="#3d756d">
+                  <g><circle cx="282" cy="136" r="19"/><circle class="rotor-ring" cx="282" cy="136" r="12" fill="none" stroke="#7df5d4" stroke-dasharray="3 4"/></g>
+                  <g><circle cx="378" cy="136" r="19"/><circle class="rotor-ring" cx="378" cy="136" r="12" fill="none" stroke="#7df5d4" stroke-dasharray="3 4"/></g>
+                  <g><circle cx="282" cy="232" r="19"/><circle class="rotor-ring" cx="282" cy="232" r="12" fill="none" stroke="#7df5d4" stroke-dasharray="3 4"/></g>
+                  <g><circle cx="378" cy="232" r="19"/><circle class="rotor-ring" cx="378" cy="232" r="12" fill="none" stroke="#7df5d4" stroke-dasharray="3 4"/></g>
+                </g>
+                <rect x="306" y="160" width="48" height="48" rx="11" fill="#0d1b20" stroke="#4becbb"/>
+                <circle cx="330" cy="184" r="7" fill="#4becbb"/>
+                <circle cx="330" cy="184" r="14" fill="none" stroke="#4becbb" stroke-opacity=".35"/>
+              </g>
+              <g>
+                <circle class="ping" cx="404" cy="104" r="7" fill="#4becbb" fill-opacity=".15" stroke="#4becbb" stroke-opacity=".5"/>
+                <circle cx="404" cy="104" r="2.5" fill="#4becbb"/>
+                <text x="416" y="101" class="art-label" fill="#7df5d4">CONTACT 01</text>
+                <circle class="ping" cx="242" cy="252" r="7" fill="#ffb26b" fill-opacity=".12" stroke="#ffb26b" stroke-opacity=".5"/>
+                <circle cx="242" cy="252" r="2.5" fill="#ffb26b"/>
+                <text x="254" y="249" class="art-label" fill="#c9955d">CONTACT 02</text>
+              </g>
+              <g class="art-label">
+                <text x="32" y="38" fill="#4becbb">SEADRONE / 01</text>
+                <text x="32" y="54" fill="#5f7880">AUTONOMOUS MARITIME SYSTEM</text>
+                <text x="32" y="332" fill="#5f7880">36.8065° N · 10.1815° E</text>
+                <text x="608" y="332" text-anchor="end" fill="#5f7880">YOLOV8N · LORA · PID</text>
+                <text x="608" y="38" text-anchor="end" fill="#5f7880">RPI 4 / ESP32</text>
+              </g>
+              <g fill="none" stroke="#294650" opacity=".7">
+                <path d="M20 44V20h24M596 20h24v24M20 316v24h24M620 316v24h-24"/>
+              </g>
+            </svg>
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-index">01</span>
+              <span class="project-kicker">Autonomous systems</span>
+            </div>
+            <h3>SeaDrone</h3>
+            <p class="project-sub">Custom flight control · edge AI vision · long-range telemetry</p>
+            <p class="project-desc">
+              An autonomous maritime drone with custom ESP32 flight control and YOLOv8n edge
+              vision on Raspberry Pi 4 to detect people in distress, support rescue operations,
+              and monitor maritime areas.
+            </p>
+            <ul class="chip-list">
+              <li class="chip">C++</li><li class="chip">Python</li><li class="chip">ESP32</li>
+              <li class="chip">YOLOv8</li><li class="chip">FastAPI</li><li class="chip">OpenCV</li>
+              <li class="chip">LoRa</li><li class="chip">PID</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Zaater OS -->
+        <article class="project" data-reveal style="--d:.08s">
+          <div class="project-art">
+            <svg class="art-svg" viewBox="0 0 640 360" role="img" aria-label="Layered illustration of the Zaater OS embedded Linux stack with a field gateway, on-device machine learning, ESP32 nodes, and soil sensors">
+              <defs>
+                <linearGradient id="za-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a1417"/><stop offset="1" stop-color="#060a0d"/></linearGradient>
+                <radialGradient id="za-glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#4becbb" stop-opacity=".14"/><stop offset="1" stop-color="#4becbb" stop-opacity="0"/></radialGradient>
+                <pattern id="za-grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#15262d" stroke-width="1"/></pattern>
+              </defs>
+              <rect width="640" height="360" fill="url(#za-bg)"/>
+              <rect width="640" height="360" fill="url(#za-grid)" opacity=".5"/>
+              <circle cx="300" cy="190" r="200" fill="url(#za-glow)"/>
+              <g class="art-label">
+                <text x="32" y="38" fill="#4becbb">ZAATER OS / 02</text>
+                <text x="32" y="54" fill="#5f7880">CUSTOM EMBEDDED LINUX</text>
+                <text x="608" y="38" text-anchor="end" fill="#5f7880">YOCTO · RPI 3B+</text>
+              </g>
+
+              <!-- layer 1 -->
+              <g>
+                <rect x="48" y="86" width="360" height="58" rx="10" fill="#0b151a" stroke="#2b4a53"/>
+                <rect x="48" y="86" width="3" height="58" fill="#4becbb"/>
+                <g transform="translate(66 102)" fill="none" stroke="#4becbb" stroke-width="1.3">
+                  <rect x="2" y="2" width="14" height="14" rx="3"/><path d="M6-2v4M12-2v4M6 16v4M12 16v4M-2 6h4M-2 12h4M16 6h4M16 12h4"/>
+                </g>
+                <text x="98" y="108" class="art-label" fill="#dff7f0" style="font-size:10px">FIELD GATEWAY</text>
+                <text x="98" y="124" class="art-label" fill="#5f7880">RASPBERRY PI 3B+</text>
+                <text x="390" y="120" text-anchor="end" class="art-label" fill="#4b656d">01</text>
+              </g>
+              <!-- layer 2 -->
+              <g>
+                <rect x="48" y="160" width="360" height="58" rx="10" fill="#0b151a" stroke="#2b4a53"/>
+                <rect x="48" y="160" width="3" height="58" fill="#2b4a53"/>
+                <g transform="translate(66 176)" fill="none" stroke="#69e7c4" stroke-width="1.3">
+                  <path d="m12 0 11 6-11 6L1 6l11-6Z"/><path d="m1 11 11 6 11-6M1 15l11 6 11-6"/>
+                </g>
+                <text x="98" y="182" class="art-label" fill="#dff7f0" style="font-size:10px">YOCTO LINUX</text>
+                <text x="98" y="198" class="art-label" fill="#5f7880">ON-DEVICE ML · IRRIGATION</text>
+                <text x="390" y="194" text-anchor="end" class="art-label" fill="#4b656d">02</text>
+              </g>
+              <!-- layer 3 -->
+              <g>
+                <rect x="48" y="234" width="360" height="58" rx="10" fill="#0b151a" stroke="#2b4a53"/>
+                <rect x="48" y="234" width="3" height="58" fill="#2b4a53"/>
+                <g transform="translate(66 250)" fill="none" stroke="#69e7c4" stroke-width="1.3">
+                  <path d="M12 23V9M7 14l5-5 5 5M4 23h16"/>
+                </g>
+                <text x="98" y="256" class="art-label" fill="#dff7f0" style="font-size:10px">ESP32 NODES</text>
+                <text x="98" y="272" class="art-label" fill="#5f7880">SOIL · TEMP · MQTT</text>
+                <text x="390" y="268" text-anchor="end" class="art-label" fill="#4b656d">03</text>
+              </g>
+
+              <!-- connectors -->
+              <g fill="none" stroke="#2b4a53">
+                <path d="M228 144v16M228 218v16"/>
+              </g>
+              <g fill="none" stroke="#4becbb" stroke-opacity=".65" stroke-dasharray="3 7" class="flow">
+                <path d="M228 144v16M228 218v16"/>
+              </g>
+              <text x="238" y="157" class="art-label" fill="#4b656d">MQTT</text>
+              <text x="238" y="231" class="art-label" fill="#4b656d">ETL</text>
+
+              <!-- sensor panel -->
+              <rect x="444" y="86" width="148" height="206" rx="12" fill="#0a1317" stroke="#2b4a53"/>
+              <text x="460" y="108" class="art-label" fill="#4becbb">SENSOR BUS</text>
+              <g class="art-label" fill="#5f7880">
+                <text x="460" y="138">SOIL MOISTURE</text>
+                <text x="460" y="172">TEMPERATURE</text>
+                <text x="460" y="206">WEATHER</text>
+              </g>
+              <rect x="460" y="146" width="116" height="5" rx="2.5" fill="#1b2f37"/>
+              <rect x="460" y="146" width="74" height="5" rx="2.5" fill="#4becbb" class="bar"/>
+              <rect x="460" y="180" width="116" height="5" rx="2.5" fill="#1b2f37"/>
+              <rect x="460" y="180" width="52" height="5" rx="2.5" fill="#4becbb" opacity=".7"/>
+              <g transform="translate(460 218)" fill="none" stroke="#ffb26b" stroke-width="1.2" opacity=".8">
+                <circle cx="8" cy="7" r="5"/><path d="M8 0v2M8 12v2M1 7h2M13 7h2M3.5 2.5l1.5 1.5M11 9.5l1.5 1.5M12.5 2.5 11 4M5 9.5 3.5 11"/>
+                <path d="M20 13h8a4 4 0 0 0 0-8h-1" transform="translate(4 -2)"/>
+              </g>
+              <text x="498" y="238" class="art-label" fill="#4b656d">24.6°C · 62%</text>
+              <path d="M460 260h116" stroke="#1e343c"/>
+              <text x="460" y="278" class="art-label" fill="#4becbb">SCHEDULE AUTO</text>
+
+              <g class="art-label" fill="#4b656d">
+                <text x="32" y="332">SOIL MOISTURE · TEMPERATURE · WEATHER VIA MQTT</text>
+                <text x="608" y="332" text-anchor="end">EDGE INFERENCE</text>
+              </g>
+              <g fill="none" stroke="#294650" opacity=".7">
+                <path d="M20 44V20h24M596 20h24v24M20 316v24h24M620 316v24h-24"/>
+              </g>
+            </svg>
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-index">02</span>
+              <span class="project-kicker">Embedded Linux</span>
+            </div>
+            <h3>Zaater OS</h3>
+            <p class="project-sub">Yocto-built Linux · on-device ML irrigation</p>
+            <p class="project-desc">
+              A custom Yocto image for a Raspberry Pi 3B+ field gateway that runs on-device ML
+              inference to schedule irrigation from soil moisture, temperature, and weather data
+              collected over MQTT from ESP32 nodes.
+            </p>
+            <ul class="chip-list">
+              <li class="chip">Yocto</li><li class="chip">Embedded Linux</li><li class="chip">RPi 3B+</li>
+              <li class="chip">ESP32</li><li class="chip">On-device ML</li><li class="chip">MQTT</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Fault-tolerant boot -->
+        <article class="project" data-reveal>
+          <div class="project-art">
+            <svg class="art-svg" viewBox="0 0 640 360" role="img" aria-label="Diagram of a fault-tolerant boot flow where U-Boot falls back from a primary Yocto partition to a minimal recovery partition">
+              <defs>
+                <linearGradient id="ft-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a1318"/><stop offset="1" stop-color="#060a0d"/></linearGradient>
+                <pattern id="ft-grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#15262d" stroke-width="1"/></pattern>
+              </defs>
+              <rect width="640" height="360" fill="url(#ft-bg)"/>
+              <rect width="640" height="360" fill="url(#ft-grid)" opacity=".5"/>
+              <g class="art-label">
+                <text x="32" y="38" fill="#4becbb">BOOT RECOVERY / 03</text>
+                <text x="32" y="54" fill="#5f7880">FAULT-TOLERANT EMBEDDED LINUX</text>
+                <text x="608" y="38" text-anchor="end" fill="#5f7880">QEMU ARM64</text>
+              </g>
+
+              <!-- u-boot -->
+              <rect x="36" y="150" width="120" height="66" rx="10" fill="#0b151a" stroke="#2b4a53"/>
+              <text x="96" y="177" text-anchor="middle" class="art-label" fill="#dff7f0" style="font-size:10px">U-BOOT</text>
+              <text x="96" y="193" text-anchor="middle" class="art-label" fill="#5f7880">BOOTCOUNT 1/3</text>
+              <circle cx="48" cy="162" r="2.5" fill="#4becbb"/>
+
+              <!-- partition A -->
+              <rect x="252" y="78" width="172" height="68" rx="10" fill="#0b151a" stroke="#2b4a53"/>
+              <text x="268" y="105" class="art-label" fill="#dff7f0" style="font-size:10px">PARTITION A</text>
+              <text x="268" y="121" class="art-label" fill="#5f7880">YOCTO LINUX · PRIMARY</text>
+              <text x="408" y="130" text-anchor="end" class="art-label" fill="#4becbb">FIT</text>
+
+              <!-- partition B -->
+              <rect x="252" y="216" width="172" height="68" rx="10" fill="#0b151a" stroke="#4a3a2b"/>
+              <text x="268" y="243" class="art-label" fill="#ffd7ae" style="font-size:10px">PARTITION B</text>
+              <text x="268" y="259" class="art-label" fill="#8a7a66">MINIMAL RECOVERY</text>
+              <text x="408" y="268" text-anchor="end" class="art-label" fill="#ffb26b">FALLBACK</text>
+
+              <!-- ok -->
+              <rect x="520" y="216" width="84" height="68" rx="10" fill="#0b151a" stroke="#2b4a53"/>
+              <circle cx="562" cy="242" r="10" fill="none" stroke="#4becbb"/>
+              <path d="m557 242 3.5 3.5 7-7" fill="none" stroke="#4becbb" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="562" y="270" text-anchor="middle" class="art-label" fill="#5f7880">SYSTEM UP</text>
+
+              <!-- paths -->
+              <path d="M156 183H204V112H252" fill="none" stroke="#3f7a6d" stroke-width="1.4"/>
+              <path d="M156 183H204V250H252" fill="none" stroke="#ffb26b" stroke-opacity=".5" stroke-width="1.2" stroke-dasharray="4 6"/>
+              <path d="M336 146V216" fill="none" stroke="#ffb26b" stroke-opacity=".55" stroke-width="1.2" stroke-dasharray="4 5" class="flow"/>
+              <path d="M424 250H520" fill="none" stroke="#4becbb" stroke-opacity=".7" stroke-width="1.4"/>
+              <g fill="none" stroke="#4becbb" stroke-width="1.4">
+                <path d="m246 108 6 4-6 4M246 246l6 4-6 4M514 246l6 4-6 4"/>
+              </g>
+              <g class="art-label" fill="#4b656d">
+                <text x="214" y="100">PRIMARY</text>
+                <text x="212" y="282">FALLBACK</text>
+                <text x="342" y="186" fill="#c9955d">3 FAILS</text>
+                <text x="438" y="244" fill="#4becbb">RECOVER</text>
+              </g>
+
+              <text x="36" y="330" class="art-label" fill="#4b656d">BOOTCOUNT++ · USERSPACE_OK · AUTOMATIC ROLLBACK</text>
+              <g class="art-label" fill="#4b656d">
+                <text x="608" y="330" text-anchor="end">U-BOOT · FIT · YOCTO</text>
+              </g>
+              <g fill="none" stroke="#294650" opacity=".7">
+                <path d="M20 44V20h24M596 20h24v24M20 316v24h24M620 316v24h-24"/>
+              </g>
+            </svg>
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-index">03</span>
+              <span class="project-kicker">Embedded Linux</span>
+            </div>
+            <h3>Fault-Tolerant Boot</h3>
+            <p class="project-sub">Automatic boot-failure detection &amp; recovery</p>
+            <p class="project-desc">
+              A U-Boot flow with automatic fallback from a standard Yocto image to a minimal
+              recovery image after repeated boot failures — plus boot-attempt tracking and
+              userspace success confirmation, validated in QEMU ARM64.
+            </p>
+            <ul class="chip-list">
+              <li class="chip">Yocto</li><li class="chip">U-Boot</li><li class="chip">QEMU</li>
+              <li class="chip">ARM64</li><li class="chip">Bash</li><li class="chip">FIT</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Weather station -->
+        <article class="project" data-reveal style="--d:.08s">
+          <div class="project-art">
+            <svg class="art-svg" viewBox="0 0 640 360" role="img" aria-label="Illustration of an STM32F407 weather station running a neural network for on-device anomaly detection">
+              <defs>
+                <linearGradient id="ws-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a1417"/><stop offset="1" stop-color="#060a0d"/></linearGradient>
+                <radialGradient id="ws-glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#4becbb" stop-opacity=".13"/><stop offset="1" stop-color="#4becbb" stop-opacity="0"/></radialGradient>
+                <pattern id="ws-grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#15262d" stroke-width="1"/></pattern>
+              </defs>
+              <rect width="640" height="360" fill="url(#ws-bg)"/>
+              <rect width="640" height="360" fill="url(#ws-grid)" opacity=".5"/>
+              <circle cx="300" cy="170" r="190" fill="url(#ws-glow)"/>
+              <g class="art-label">
+                <text x="32" y="38" fill="#4becbb">WEATHER STATION / 04</text>
+                <text x="32" y="54" fill="#5f7880">EDGE AI ON STM32F407</text>
+                <text x="608" y="38" text-anchor="end" fill="#5f7880">X-CUBE-AI</text>
+              </g>
+
+              <!-- weather glyphs -->
+              <g transform="translate(44 88)" fill="none" stroke="#ffb26b" stroke-width="1.3" opacity=".85">
+                <circle cx="18" cy="18" r="9"/>
+                <path d="M18 2v5M18 29v5M2 18h5M29 18h5M6.5 6.5l3.5 3.5M26 26l3.5 3.5M29.5 6.5 26 10M10 26l-3.5 3.5"/>
+              </g>
+              <g transform="translate(78 118)" fill="#0a1417" stroke="#547078" stroke-width="1.2">
+                <path d="M4 20a8 8 0 0 1 1-15.9 11 11 0 0 1 21 2.4A7 7 0 0 1 24 20H4Z"/>
+              </g>
+
+              <!-- MCU -->
+              <g>
+                <g fill="#223a44" stroke="#355661">
+                  <rect x="176" y="182" width="7" height="14"/><rect x="196" y="182" width="7" height="14"/><rect x="216" y="182" width="7" height="14"/><rect x="236" y="182" width="7" height="14"/><rect x="256" y="182" width="7" height="14"/><rect x="276" y="182" width="7" height="14"/>
+                  <rect x="176" y="268" width="7" height="14"/><rect x="196" y="268" width="7" height="14"/><rect x="216" y="268" width="7" height="14"/><rect x="236" y="268" width="7" height="14"/><rect x="256" y="268" width="7" height="14"/><rect x="276" y="268" width="7" height="14"/>
+                  <rect x="172" y="202" width="14" height="7"/><rect x="172" y="222" width="14" height="7"/><rect x="172" y="242" width="14" height="7"/><rect x="172" y="262" width="14" height="7"/>
+                  <rect x="292" y="202" width="14" height="7"/><rect x="292" y="222" width="14" height="7"/><rect x="292" y="242" width="14" height="7"/><rect x="292" y="262" width="14" height="7"/>
+                </g>
+                <rect x="186" y="192" width="116" height="80" rx="8" fill="#0d1a20" stroke="#3c6b66"/>
+                <circle cx="292" cy="202" r="2.5" fill="#4becbb"/>
+                <text x="244" y="226" text-anchor="middle" class="art-label" fill="#e8fbf5" style="font-size:10px">STM32F407</text>
+                <text x="244" y="242" text-anchor="middle" class="art-label" fill="#5f7880">CORTEX-M4</text>
+                <path d="M212 252h64" stroke="#264049"/>
+                <text x="244" y="264" text-anchor="middle" class="art-label" fill="#4becbb">X-CUBE-AI</text>
+              </g>
+
+              <!-- neural net -->
+              <g>
+                <g fill="none" stroke="#2b4a53">
+                  <path d="M420 128 500 108M420 128 500 168M420 128 500 228M420 188 500 108M420 188 500 168M420 188 500 228M420 248 500 108M420 248 500 168M420 248 500 228"/>
+                  <path d="M500 108 566 138M500 108 566 198M500 168 566 138M500 168 566 198M500 228 566 138M500 228 566 198"/>
+                </g>
+                <g fill="none" stroke="#4becbb" stroke-opacity=".45" stroke-dasharray="3 8" class="flow">
+                  <path d="M420 188 500 168 566 198"/>
+                  <path d="M420 128 500 228 566 138"/>
+                </g>
+                <g fill="#0d1a20" stroke="#4becbb" stroke-opacity=".7">
+                  <circle cx="420" cy="128" r="6"/><circle cx="420" cy="188" r="6"/><circle cx="420" cy="248" r="6"/>
+                  <circle cx="500" cy="108" r="6"/><circle cx="500" cy="168" r="6"/><circle cx="500" cy="228" r="6"/>
+                  <circle cx="566" cy="138" r="7"/><circle cx="566" cy="198" r="7"/>
+                </g>
+                <circle cx="566" cy="198" r="3" fill="#4becbb"/>
+                <text x="566" y="232" text-anchor="middle" class="art-label" fill="#5f7880">ANOMALY</text>
+              </g>
+
+              <!-- sensor trace -->
+              <g>
+                <path d="M44 324H596" stroke="#1e343c"/>
+                <path d="M44 300 96 292 148 302 200 284 252 290 304 270 356 276 408 256 460 264 512 244 564 250 596 238" fill="none" stroke="#4becbb" stroke-opacity=".65" stroke-width="1.3"/>
+                <path d="M44 300 96 292 148 302 200 284 252 290 304 270 356 276 408 256 460 264 512 244 564 250 596 238V324H44Z" fill="#4becbb" fill-opacity=".04"/>
+                <text x="44" y="318" class="art-label" fill="#4b656d">TEMP · HUM · PRESS</text>
+                <text x="596" y="318" text-anchor="end" class="art-label" fill="#4b656d">SENSOR FUSION</text>
+              </g>
+              <g fill="none" stroke="#294650" opacity=".7">
+                <path d="M20 44V20h24M596 20h24v24M20 316v24h24M620 316v24h-24"/>
+              </g>
+            </svg>
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-index">04</span>
+              <span class="project-kicker">Edge AI</span>
+            </div>
+            <h3>Weather Station</h3>
+            <p class="project-sub">Neural inference on an STM32F407</p>
+            <p class="project-desc">
+              A weather station running a TensorFlow-trained neural network directly on-device for
+              anomaly detection and prediction on sensor data, deployed with X-CUBE-AI.
+            </p>
+            <ul class="chip-list">
+              <li class="chip">STM32F407</li><li class="chip">X-CUBE-AI</li>
+              <li class="chip">TensorFlow</li><li class="chip">C</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Smart parking -->
+        <article class="project" data-reveal style="--d:.16s">
+          <div class="project-art">
+            <svg class="art-svg" viewBox="0 0 640 360" role="img" aria-label="Top-down illustration of a smart parking lot with computer vision detection, a vacant highlighted bay, and RFID access">
+              <defs>
+                <linearGradient id="sp-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a1417"/><stop offset="1" stop-color="#060a0d"/></linearGradient>
+                <pattern id="sp-grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#15262d" stroke-width="1"/></pattern>
+                <linearGradient id="sp-scan" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4becbb" stop-opacity="0"/><stop offset=".5" stop-color="#4becbb" stop-opacity=".55"/><stop offset="1" stop-color="#4becbb" stop-opacity="0"/></linearGradient>
+              </defs>
+              <rect width="640" height="360" fill="url(#sp-bg)"/>
+              <rect width="640" height="360" fill="url(#sp-grid)" opacity=".5"/>
+              <g class="art-label">
+                <text x="32" y="38" fill="#4becbb">SMART PARKING / 05</text>
+                <text x="32" y="54" fill="#5f7880">VISION · RFID · TOUCH HMI</text>
+                <text x="608" y="38" text-anchor="end" fill="#5f7880">ESP32-CAM</text>
+              </g>
+
+              <!-- lot -->
+              <g>
+                <path d="M78 88h460v216H78z" fill="#0a1317" stroke="#243d46"/>
+                <g fill="none" stroke="#243d46">
+                  <path d="M78 196h460"/>
+                  <path d="M182 88v108M286 88v108M390 88v108M494 88v108"/>
+                  <path d="M182 196v108M286 196v108M390 196v108M494 196v108"/>
+                </g>
+                <!-- cars -->
+                <g fill="#101d23" stroke="#3a575f">
+                  <rect x="92" y="102" width="76" height="80" rx="12"/>
+                  <rect x="196" y="102" width="76" height="80" rx="12"/>
+                  <rect x="300" y="102" width="76" height="80" rx="12"/>
+                  <rect x="92" y="210" width="76" height="80" rx="12"/>
+                  <rect x="404" y="210" width="76" height="80" rx="12"/>
+                </g>
+                <g fill="none" stroke="#2b4750">
+                  <path d="M104 132h52M104 152h52M104 240h52M104 260h52M208 132h52M208 152h52M416 240h52M416 260h52"/>
+                  <path d="M118 102v80M246 102v80M350 102v80M142 210v80M454 210v80" stroke-opacity=".4"/>
+                </g>
+                <!-- vacant bay -->
+                <g>
+                  <rect x="404" y="102" width="76" height="80" rx="10" fill="#4becbb" fill-opacity=".04" stroke="#4becbb" stroke-dasharray="4 5"/>
+                  <path d="M414 112h10M414 112v10M474 112h-10M474 112v10M414 172h10M414 172v-10M474 172h-10M474 172v-10" fill="none" stroke="#4becbb" stroke-width="1.5"/>
+                  <rect class="scanline" x="404" y="112" width="76" height="12" fill="url(#sp-scan)"/>
+                  <text x="442" y="158" text-anchor="middle" class="art-label" fill="#4becbb">VACANT</text>
+                </g>
+                <text x="442" y="288" text-anchor="middle" class="art-label" fill="#4b656d">LIVE STATUS</text>
+                <path d="M442 276v-8" stroke="#4becbb" stroke-opacity=".6"/>
+                <circle cx="442" cy="270" r="2.5" fill="#4becbb"/>
+              </g>
+
+              <!-- camera -->
+              <g transform="translate(520 60)">
+                <path d="M22 14 6 44M22 14l44 18M22 14l-2 54 46-36" fill="#4becbb" fill-opacity=".03" stroke="#2b4a53" stroke-dasharray="3 6"/>
+                <rect x="8" y="2" width="28" height="18" rx="4" fill="#0d1a20" stroke="#4becbb"/>
+                <circle cx="22" cy="11" r="4" fill="none" stroke="#4becbb"/>
+                <text x="22" y="-6" text-anchor="middle" class="art-label" fill="#5f7880">CAM 01</text>
+              </g>
+
+              <!-- rfid -->
+              <g transform="translate(540 286) rotate(-12)">
+                <rect width="52" height="34" rx="5" fill="#0d1a20" stroke="#ffb26b" stroke-opacity=".8"/>
+                <rect x="7" y="7" width="12" height="9" rx="1.5" fill="none" stroke="#ffb26b" stroke-opacity=".7"/>
+                <path d="M26 17h16M26 23h11" stroke="#ffb26b" stroke-opacity=".5"/>
+                <path d="M35 9a9 9 0 0 1 0 16M40 6a14 14 0 0 1 0 22" fill="none" stroke="#ffb26b" stroke-opacity=".35"/>
+              </g>
+              <text x="78" y="332" class="art-label" fill="#4b656d">OPENCV · RFID AUTH · SUPABASE · HMI</text>
+              <g fill="none" stroke="#294650" opacity=".7">
+                <path d="M20 44V20h24M596 20h24v24M20 316v24h24M620 316v24h-24"/>
+              </g>
+            </svg>
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-index">05</span>
+              <span class="project-kicker">IoT &amp; vision</span>
+            </div>
+            <h3>Smart Parking</h3>
+            <p class="project-sub">Computer vision · RFID access · touch HMI</p>
+            <p class="project-desc">
+              A parking system that detects vacant spots with computer vision, controls entry and
+              exit with RFID authentication and access logging, and shows live status on a
+              touchscreen HMI and a mobile registration app.
+            </p>
+            <ul class="chip-list">
+              <li class="chip">ESP32</li><li class="chip">ESP32-CAM</li><li class="chip">OpenCV</li>
+              <li class="chip">RFID</li><li class="chip">Supabase</li><li class="chip">UART · I2C</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="projects-foot" data-reveal>
+        <span>More experiments and repositories on</span>
+        <a href="https://github.com/pycine" target="_blank" rel="noopener">GitHub <svg class="icon" viewBox="0 0 24 24"><use href="#i-arrow-up-right"/></svg></a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================ SKILLS ============================ -->
+  <section class="section skills" id="skills" aria-labelledby="skills-title">
+    <div class="container">
+      <header class="section-head" data-reveal>
+        <p class="kicker"><span class="kicker-num">04</span><span class="kicker-slash">/</span> Stack</p>
+        <h2 id="skills-title">The toolbox,<br><span class="h2-muted">layer by layer.</span></h2>
+        <p class="section-sub">From register-level drivers to the Linux distribution on top — the tools I reach for when building embedded systems.</p>
+      </header>
+
+      <div class="skill-grid">
+        <article class="skill-card" data-reveal>
+          <div class="skill-top">
+            <span class="skill-icon"><svg class="icon" viewBox="0 0 24 24"><use href="#i-terminal"/></svg></span>
+            <span class="skill-num">/01</span>
+          </div>
+          <h3>Languages</h3>
+          <p class="skill-note">Daily drivers for firmware and tooling.</p>
+          <ul class="chip-list">
+            <li class="chip is-core">C</li><li class="chip is-core">C++</li><li class="chip">Rust</li>
+            <li class="chip">Python</li><li class="chip">Bash</li>
+          </ul>
+        </article>
+
+        <article class="skill-card" data-reveal style="--d:.08s">
+          <div class="skill-top">
+            <span class="skill-icon"><svg class="icon" viewBox="0 0 24 24"><use href="#i-chip"/></svg></span>
+            <span class="skill-num">/02</span>
+          </div>
+          <h3>MCU &amp; Platforms</h3>
+          <p class="skill-note">Where the code actually runs.</p>
+          <ul class="chip-list">
+            <li class="chip is-core">ARM Cortex-M</li><li class="chip is-core">STM32</li>
+            <li class="chip is-core">ESP32</li><li class="chip">PIC</li><li class="chip">Arduino</li>
+          </ul>
+        </article>
+
+        <article class="skill-card" data-reveal>
+          <div class="skill-top">
+            <span class="skill-icon"><svg class="icon" viewBox="0 0 24 24"><use href="#i-bolt"/></svg></span>
+            <span class="skill-num">/03</span>
+          </div>
+          <h3>RTOS &amp; Frameworks</h3>
+          <p class="skill-note">Deterministic scheduling and drivers.</p>
+          <ul class="chip-list">
+            <li class="chip is-core">Zephyr RTOS</li><li class="chip">ESP-IDF (FreeRTOS)</li>
+            <li class="chip">STM32Cube</li><li class="chip">CubeIDE</li><li class="chip">CubeMX</li>
+          </ul>
+        </article>
+
+        <article class="skill-card" data-reveal style="--d:.08s">
+          <div class="skill-top">
+            <span class="skill-icon"><svg class="icon" viewBox="0 0 24 24"><use href="#i-layers"/></svg></span>
+            <span class="skill-num">/04</span>
+          </div>
+          <h3>Embedded Linux</h3>
+          <p class="skill-note">Custom images and boot flows.</p>
+          <ul class="chip-list">
+            <li class="chip is-core">Yocto</li><li class="chip">Buildroot</li>
+            <li class="chip">U-Boot</li><li class="chip">Raspberry Pi</li>
+          </ul>
+        </article>
+
+        <article class="skill-card" data-reveal style="--d:.16s">
+          <div class="skill-top">
+            <span class="skill-icon"><svg class="icon" viewBox="0 0 24 24"><use href="#i-shield"/></svg></span>
+            <span class="skill-num">/05</span>
+          </div>
+          <h3>Security</h3>
+          <p class="skill-note">Trust from boot to transport.</p>
+          <ul class="chip-list">
+            <li class="chip is-core">Secure Boot</li><li class="chip is-core">Secure Firmware Install</li>
+            <li class="chip">TLS</li>
+          </ul>
+        </article>
+
+        <article class="skill-card" data-reveal>
+          <div class="skill-top">
+            <span class="skill-icon"><svg class="icon" viewBox="0 0 24 24"><use href="#i-radio"/></svg></span>
+            <span class="skill-num">/06</span>
+          </div>
+          <h3>Connectivity &amp; Buses</h3>
+          <p class="skill-note">From register-level buses to the cloud.</p>
+          <ul class="chip-list">
+            <li class="chip">UART</li><li class="chip">SPI</li><li class="chip">I2C</li>
+            <li class="chip is-core">BLE</li><li class="chip">Wi-Fi</li><li class="chip">LoRa</li>
+            <li class="chip">MQTT</li><li class="chip">HTTPS</li>
+          </ul>
+        </article>
+
+        <article class="skill-card" data-reveal style="--d:.08s">
+          <div class="skill-top">
+            <span class="skill-icon"><svg class="icon" viewBox="0 0 24 24"><use href="#i-eye"/></svg></span>
+            <span class="skill-num">/07</span>
+          </div>
+          <h3>Edge AI &amp; Vision</h3>
+          <p class="skill-note">Models deployed on constrained targets.</p>
+          <ul class="chip-list">
+            <li class="chip">OpenCV</li><li class="chip">YOLO</li><li class="chip">TensorFlow</li>
+            <li class="chip">PyTorch</li><li class="chip is-core">X-CUBE-AI</li>
+          </ul>
+        </article>
+
+        <article class="skill-card" data-reveal style="--d:.16s">
+          <div class="skill-top">
+            <span class="skill-icon"><svg class="icon" viewBox="0 0 24 24"><use href="#i-tool"/></svg></span>
+            <span class="skill-num">/08</span>
+          </div>
+          <h3>Tools &amp; Systems</h3>
+          <p class="skill-note">Build, emulate, ship.</p>
+          <ul class="chip-list">
+            <li class="chip">Git</li><li class="chip">Docker</li><li class="chip">KVM / QEMU</li>
+            <li class="chip">Linux (RedHat, Debian)</li>
+          </ul>
+        </article>
+      </div>
+
+      <p class="skills-foot" data-reveal>
+        <span class="legend-dot" aria-hidden="true"></span>
+        Highlighted tools are the ones I reach for first.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================ EDUCATION ============================ -->
+  <section class="section education" id="education" aria-labelledby="education-title">
+    <div class="container">
+      <header class="section-head" data-reveal>
+        <p class="kicker"><span class="kicker-num">05</span><span class="kicker-slash">/</span> Education</p>
+        <h2 id="education-title">Formal foundations.<br><span class="h2-muted">Applied every day.</span></h2>
+      </header>
+
+      <div class="edu-grid">
+        <article class="edu-card" data-reveal>
+          <div class="edu-top">
+            <span class="edu-mark">ESPRIT</span>
+            <span class="edu-num">01</span>
+          </div>
+          <h3>Engineering Degree in Computer Engineering</h3>
+          <p class="edu-school">ESPRIT</p>
+          <p class="edu-detail">Specialization in Embedded Systems — final year.</p>
+          <span class="edu-tag">Final year</span>
+        </article>
+
+        <article class="edu-card" data-reveal style="--d:.08s">
+          <div class="edu-top">
+            <span class="edu-mark">IPEIG</span>
+            <span class="edu-num">02</span>
+          </div>
+          <h3>Preparatory Studies in Mathematics &amp; Physics</h3>
+          <p class="edu-school">Preparatory Institute for Engineering Studies</p>
+          <p class="edu-detail">Mathematics and physics foundation for engineering.</p>
+          <span class="edu-tag">Preparatory cycle</span>
+        </article>
+
+        <article class="edu-card" data-reveal style="--d:.16s">
+          <div class="edu-top">
+            <span class="edu-mark">BAC</span>
+            <span class="edu-num">03</span>
+          </div>
+          <h3>Baccalaureate in Mathematics</h3>
+          <p class="edu-school">Secondary education</p>
+          <p class="edu-detail">Mathematics specialization — the start of the path into engineering and systems.</p>
+          <span class="edu-tag">Baccalaureate</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ CREDENTIALS ============================ -->
+  <section class="section credentials" id="credentials" aria-labelledby="credentials-title">
+    <div class="container">
+      <header class="section-head" data-reveal>
+        <p class="kicker"><span class="kicker-num">06</span><span class="kicker-slash">/</span> Credentials</p>
+        <h2 id="credentials-title">Certified.<br><span class="h2-muted">Verifiably so.</span></h2>
+        <p class="section-sub">Six credentials across embedded C, Linux, deep learning, and professional communication — each one linked to its verification page.</p>
+      </header>
+
+      <div class="cert-grid">
+        <a class="cert" href="https://learn.nvidia.com/certificates?id=eUzeYicmRTCYnSqRf3KYZg" target="_blank" rel="noopener" data-reveal>
+          <span class="cert-badge" aria-hidden="true">NV</span>
+          <span class="cert-body">
+            <span class="cert-title">Fundamentals of Deep Learning</span>
+            <span class="cert-issuer">NVIDIA</span>
+          </span>
+          <span class="cert-action"><span class="cert-action-text">Verify</span> <svg class="icon" viewBox="0 0 24 24"><use href="#i-external"/></svg></span>
+        </a>
+
+        <a class="cert" href="https://verify.skilljar.com/c/c9mm8g6e3u2h" target="_blank" rel="noopener" data-reveal style="--d:.06s">
+          <span class="cert-badge" aria-hidden="true">MC</span>
+          <span class="cert-body">
+            <span class="cert-title">Advanced C Programming</span>
+            <span class="cert-issuer">Microchip University</span>
+          </span>
+          <span class="cert-action"><span class="cert-action-text">Verify</span> <svg class="icon" viewBox="0 0 24 24"><use href="#i-external"/></svg></span>
+        </a>
+
+        <a class="cert" href="https://coursera.org/share/e150a60be011197520c942132befaa89" target="_blank" rel="noopener" data-reveal>
+          <span class="cert-badge" aria-hidden="true">CO</span>
+          <span class="cert-body">
+            <span class="cert-title">Embedded Systems using C</span>
+            <span class="cert-issuer">Coursera</span>
+          </span>
+          <span class="cert-action"><span class="cert-action-text">Verify</span> <svg class="icon" viewBox="0 0 24 24"><use href="#i-external"/></svg></span>
+        </a>
+
+        <a class="cert" href="https://www.datacamp.com/completed/statement-of-accomplishment/track/dd467e4ef93c617047e2e1e9ca506d9d0489e3c7" target="_blank" rel="noopener" data-reveal style="--d:.06s">
+          <span class="cert-badge" aria-hidden="true">DC</span>
+          <span class="cert-body">
+            <span class="cert-title">GitHub Foundations</span>
+            <span class="cert-issuer">DataCamp</span>
+          </span>
+          <span class="cert-action"><span class="cert-action-text">Verify</span> <svg class="icon" viewBox="0 0 24 24"><use href="#i-external"/></svg></span>
+        </a>
+
+        <a class="cert" href="https://www.utclisolutions.com/certificate/1106175" target="_blank" rel="noopener" data-reveal>
+          <span class="cert-badge" aria-hidden="true">UT</span>
+          <span class="cert-body">
+            <span class="cert-title">Complete Linux Training Course</span>
+            <span class="cert-issuer">UTCL</span>
+          </span>
+          <span class="cert-action"><span class="cert-action-text">Verify</span> <svg class="icon" viewBox="0 0 24 24"><use href="#i-external"/></svg></span>
+        </a>
+
+        <a class="cert" href="https://app.manara.tech/certificate/1738489760-FADCC57A913661A3" target="_blank" rel="noopener" data-reveal style="--d:.06s">
+          <span class="cert-badge" aria-hidden="true">MA</span>
+          <span class="cert-body">
+            <span class="cert-title">Professional English for Software Engineers</span>
+            <span class="cert-issuer">MANARA</span>
+          </span>
+          <span class="cert-action"><span class="cert-action-text">Verify</span> <svg class="icon" viewBox="0 0 24 24"><use href="#i-external"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ CONTACT ============================ -->
+  <section class="section contact" id="contact" aria-labelledby="contact-title">
+    <div class="contact-glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-copy">
+          <header class="section-head" data-reveal>
+            <p class="kicker"><span class="kicker-num">07</span><span class="kicker-slash">/</span> Contact</p>
+            <h2 id="contact-title">Let's build something<br><span class="grad">that runs on metal.</span></h2>
+            <p class="section-sub">
+              I'm looking for an end-of-studies internship in embedded systems — firmware, RTOS,
+              embedded Linux, or edge AI. If you're building close to the hardware, I'd like to
+              hear about it.
+            </p>
+          </header>
+
+          <div class="contact-actions" data-reveal>
+            <a class="contact-email" href="mailto:mohamedyacine.daoudi@proton.me">
+              mohamedyacine.daoudi@proton.me
+              <svg class="icon" viewBox="0 0 24 24"><use href="#i-arrow-up-right"/></svg>
+            </a>
+            <button class="copy-btn" type="button" data-copy="mohamedyacine.daoudi@proton.me">
+              <svg class="icon copy-icon" viewBox="0 0 24 24"><use href="#i-copy"/></svg>
+              <svg class="icon check-icon" viewBox="0 0 24 24"><use href="#i-check"/></svg>
+              <span class="copy-label">Copy email</span>
+            </button>
+          </div>
+
+          <div class="contact-socials" data-reveal>
+            <a href="https://github.com/pycine" target="_blank" rel="noopener">
+              <svg class="icon icon--solid" viewBox="0 0 24 24"><use href="#i-github"/></svg>
+              <span>GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/daoudi-med-yacine" target="_blank" rel="noopener">
+              <svg class="icon icon--solid" viewBox="0 0 24 24"><use href="#i-linkedin"/></svg>
+              <span>LinkedIn</span>
+            </a>
+            <a href="tel:+21694510518">
+              <svg class="icon" viewBox="0 0 24 24"><use href="#i-phone"/></svg>
+              <span>+216 94 510 518</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-card" role="group" aria-label="Contact channels" data-reveal style="--d:.1s">
+          <div class="contact-card-head">
+            <span><i class="mini-led mini-led--pulse" aria-hidden="true"></i>OPEN CHANNELS</span>
+            <span>01 — 04</span>
+          </div>
+          <ul class="channel-list">
+            <li>
+              <a href="mailto:mohamedyacine.daoudi@proton.me">
+                <span class="channel-icon"><svg class="icon" viewBox="0 0 24 24"><use href="#i-mail"/></svg></span>
+                <span class="channel-text"><b>Email</b><span>mohamedyacine.daoudi@proton.me</span></span>
+                <svg class="icon channel-arrow" viewBox="0 0 24 24"><use href="#i-arrow-up-right"/></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/pycine" target="_blank" rel="noopener">
+                <span class="channel-icon"><svg class="icon icon--solid" viewBox="0 0 24 24"><use href="#i-github"/></svg></span>
+                <span class="channel-text"><b>GitHub</b><span>github.com/pycine</span></span>
+                <svg class="icon channel-arrow" viewBox="0 0 24 24"><use href="#i-arrow-up-right"/></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/daoudi-med-yacine" target="_blank" rel="noopener">
+                <span class="channel-icon"><svg class="icon icon--solid" viewBox="0 0 24 24"><use href="#i-linkedin"/></svg></span>
+                <span class="channel-text"><b>LinkedIn</b><span>/in/daoudi-med-yacine</span></span>
+                <svg class="icon channel-arrow" viewBox="0 0 24 24"><use href="#i-arrow-up-right"/></svg>
+              </a>
+            </li>
+            <li>
+              <a href="assets/resume.pdf" target="_blank" rel="noopener">
+                <span class="channel-icon"><svg class="icon" viewBox="0 0 24 24"><use href="#i-download"/></svg></span>
+                <span class="channel-text"><b>Résumé</b><span>PDF · latest version</span></span>
+                <svg class="icon channel-arrow" viewBox="0 0 24 24"><use href="#i-arrow-up-right"/></svg>
+              </a>
+            </li>
+          </ul>
+          <div class="contact-card-foot">
+            <span><svg class="icon" viewBox="0 0 24 24"><use href="#i-pin"/></svg>Tunisia · UTC+1</span>
+            <span class="status-cell"><i class="mini-led mini-led--pulse" aria-hidden="true"></i>Available</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a class="brand" href="#top" aria-label="Back to top">
+      <span class="brand-mark" aria-hidden="true">
+        <svg class="icon" viewBox="0 0 24 24"><use href="#i-chip"/></svg>
+      </span>
+      <span class="brand-text">daoudi<span class="brand-dot">.</span></span>
+    </a>
+    <p class="footer-note">© <span id="year">2026</span> Daoudi Mohamed Yacine · Designed &amp; built from scratch</p>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="https://github.com/pycine" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/daoudi-med-yacine" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:mohamedyacine.daoudi@proton.me">Email</a>
+      <a href="#top" class="back-top">Top <svg class="icon" viewBox="0 0 24 24"><use href="#i-arrow-up-right"/></svg></a>
+    </nav>
+  </div>
+</footer>
+
+<div class="toast" role="status" aria-live="polite">
+  <svg class="icon" viewBox="0 0 24 24"><use href="#i-check"/></svg>
+  <span class="toast-text">Email copied to clipboard</span>
+</div>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

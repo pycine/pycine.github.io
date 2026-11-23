@@ -4,19 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Daoudi Mohamed Yacine — Embedded Systems Engineer</title>
-<meta name="description" content="Portfolio of Daoudi Mohamed Yacine, final-year Computer Engineering student specializing in embedded systems: bare-metal and RTOS firmware, embedded Linux, and edge AI on STM32, ESP32, and Raspberry Pi.">
+<meta name="description" content="Portfolio of Daoudi Mohamed Yacine, final-year Computer Engineering student specializing in embedded systems: bare-metal and RTOS firmware, embedded Linux, secure OTA updates, and edge AI on STM32, ESP32, and Raspberry Pi.">
 <meta name="author" content="Daoudi Mohamed Yacine">
 <meta name="theme-color" content="#06080b">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Daoudi Mohamed Yacine — Embedded Systems Engineer">
 <meta property="og:description" content="Firmware, embedded Linux &amp; edge AI — engineered close to the metal.">
-<meta property="og:url" content="https://pycine.github.io/">
-<meta property="og:image" content="https://pycine.github.io/assets/og.png">
+<meta property="og:url" content="https://pycine.github.io/portfolio/">
+<meta property="og:image" content="https://pycine.github.io/portfolio/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Daoudi Mohamed Yacine — Embedded Systems Engineer">
 <meta name="twitter:description" content="Firmware, embedded Linux &amp; edge AI — engineered close to the metal.">
-<meta name="twitter:image" content="https://pycine.github.io/assets/og.png">
-<link rel="canonical" href="https://pycine.github.io/">
+<meta name="twitter:image" content="https://pycine.github.io/portfolio/assets/og.png">
+<link rel="canonical" href="https://pycine.github.io/portfolio/">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="assets/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
@@ -31,7 +31,7 @@
   "jobTitle": "Embedded Systems Engineer",
   "email": "mailto:mohamedyacine.daoudi@proton.me",
   "telephone": "+21694510518",
-  "url": "https://pycine.github.io/",
+  "url": "https://pycine.github.io/portfolio/",
   "sameAs": [
     "https://github.com/pycine",
     "https://www.linkedin.com/in/daoudi-med-yacine"
@@ -40,7 +40,7 @@
     { "@type": "CollegeOrUniversity", "name": "ESPRIT" },
     { "@type": "CollegeOrUniversity", "name": "Preparatory Institute for Engineering Studies (IPEIG)" }
   ],
-  "knowsAbout": ["Embedded systems", "Firmware", "Zephyr RTOS", "Embedded Linux", "Yocto", "STM32", "ESP32", "Edge AI", "IoT"]
+  "knowsAbout": ["Embedded systems", "Firmware", "Zephyr RTOS", "Embedded Linux", "Yocto", "RAUC", "Secure OTA", "STM32", "ESP32", "Edge AI", "IoT"]
 }
 </script>
 </head>
@@ -147,8 +147,8 @@
 
         <p class="hero-lede" data-reveal style="--d:.18s">
           Final-year Computer Engineering student at ESPRIT. I build reliable low-level systems:
-          bare-metal STM32 firmware, Zephyr RTOS services, and custom Yocto distributions that
-          recover when the physical world misbehaves.
+          bare-metal STM32 firmware, Zephyr RTOS services, and custom Yocto distributions with
+          secure OTA and recovery built in.
         </p>
 
         <div class="hero-actions" data-reveal style="--d:.24s">
@@ -387,7 +387,7 @@
         <span class="stat-label">Industry internships</span>
       </div>
       <div class="stat" data-reveal style="--d:.08s">
-        <span class="stat-num" data-count="5" data-pad="2">05</span>
+        <span class="stat-num" data-count="6" data-pad="2">06</span>
         <span class="stat-label">Embedded projects</span>
       </div>
       <div class="stat" data-reveal style="--d:.16s">
@@ -420,7 +420,8 @@
             At STMicroelectronics I built a configuration-driven provisioning engine for the
             Secure Firmware Install toolchain. At Gewinner I developed reusable Zephyr firmware
             with BLE provisioning, TLS/REST connectivity, and an offline-first filesystem that
-            survives outages and reboots.
+            survives outages and reboots. Updatini, my secure OTA platform, pairs RAUC A/B
+            updates with a serverless backend for authenticated, rollback-safe releases.
           </p>
           <p>
             I care about deterministic behavior, secure boot, and systems that recover gracefully
@@ -464,7 +465,7 @@
           <span class="focus-icon"><svg class="icon" viewBox="0 0 24 24"><use href="#i-layers"/></svg></span>
           <span class="focus-num">/02</span>
           <h3>Embedded Linux</h3>
-          <p>Yocto and Buildroot images, U-Boot boot flows, and fault-tolerant update and recovery paths.</p>
+          <p>Yocto and Buildroot images, U-Boot boot flows, and fault-tolerant update and recovery paths, including secure OTA.</p>
         </article>
         <article class="focus-card" data-reveal style="--d:.16s">
           <span class="focus-icon"><svg class="icon" viewBox="0 0 24 24"><use href="#i-nodes"/></svg></span>
@@ -549,13 +550,119 @@
       <header class="section-head" data-reveal>
         <p class="kicker"><span class="kicker-num">03</span><span class="kicker-slash">/</span> Selected work</p>
         <h2 id="projects-title">Systems that run<br><span class="h2-muted">on real hardware.</span></h2>
-        <p class="section-sub">Five builds across firmware, embedded Linux, and edge AI — each one validated on a physical target or in emulation.</p>
+        <p class="section-sub">Six builds across firmware, embedded Linux, and edge AI — each one built on a physical target or validated in emulation.</p>
       </header>
 
       <div class="project-grid">
 
-        <!-- SeaDrone -->
-        <article class="project project--feature" data-reveal>
+        <a class="project project--lg" href="projects/updatini.html" aria-label="View the Updatini project" data-reveal>
+          <div class="project-art">
+            <svg class="art-svg" viewBox="0 0 640 360" role="img" aria-label="Diagram of the Updatini OTA flow: signed RAUC bundles move from Cloudflare Workers, D1 and R2 to a Raspberry Pi with A/B update slots and automatic rollback">
+  <defs>
+    <linearGradient id="up-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a1419"/><stop offset="1" stop-color="#060a0d"/></linearGradient>
+    <radialGradient id="up-glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#4becbb" stop-opacity=".14"/><stop offset="1" stop-color="#4becbb" stop-opacity="0"/></radialGradient>
+    <pattern id="up-grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#15262d" stroke-width="1"/></pattern>
+  </defs>
+  <rect width="640" height="360" fill="url(#up-bg)"/>
+  <rect width="640" height="360" fill="url(#up-grid)" opacity=".5"/>
+  <circle cx="320" cy="180" r="210" fill="url(#up-glow)"/>
+
+  <g class="art-label">
+    <text x="32" y="38" fill="#4becbb">UPDATINI / 01</text>
+    <text x="32" y="54" fill="#5f7880">SECURE OTA · YOCTO · RAUC</text>
+    <text x="608" y="38" text-anchor="end" fill="#5f7880">RPI / CLOUDFLARE</text>
+  </g>
+
+  <!-- cloud + admin -->
+  <g>
+    <path d="M50 146a26 26 0 0 1 3-51 34 34 0 0 1 64 4 22 22 0 0 1 9 43H50Z" fill="#0b151a" stroke="#2b4a53"/>
+    <circle cx="76" cy="112" r="2.5" fill="#4becbb"/>
+    <text x="121" y="166" text-anchor="middle" class="art-label" fill="#4becbb">CLOUDFLARE</text>
+    <text x="121" y="180" text-anchor="middle" class="art-label" fill="#5f7880">WORKERS · D1 · R2</text>
+
+    <rect x="44" y="200" width="154" height="74" rx="10" fill="#0b151a" stroke="#2b4a53"/>
+    <text x="58" y="222" class="art-label" fill="#dff7f0" style="font-size:9.5px">ADMIN PORTAL</text>
+    <text x="58" y="238" class="art-label" fill="#5f7880">PUBLISH · TARGET</text>
+    <g transform="translate(166 218)" fill="none" stroke="#4becbb" stroke-width="1.3">
+      <path d="M8 12V1M4 5l4-4 4 4M1 15h14"/>
+    </g>
+    <text x="58" y="260" class="art-label" fill="#4b656d">DEVICE / BOARD SCOPE</text>
+  </g>
+
+  <!-- bundle -->
+  <g>
+    <rect x="244" y="116" width="110" height="108" rx="11" fill="#0c171b" stroke="#4becbb" stroke-opacity=".55"/>
+    <path d="M299 132 314 138v13c0 8-6.5 13-15 16-8.5-3-15-8-15-16v-13l15-6Z" fill="none" stroke="#4becbb" stroke-width="1.4"/>
+    <path d="m292 150 4.5 4.5 8.5-9" fill="none" stroke="#4becbb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="299" y="180" text-anchor="middle" class="art-label" fill="#dff7f0" style="font-size:9.5px">SIGNED</text>
+    <text x="299" y="195" text-anchor="middle" class="art-label" fill="#5f7880">RAUC BUNDLE</text>
+    <path d="M262 208h74" stroke="#1f383f"/>
+    <text x="299" y="216" text-anchor="middle" class="art-label" fill="#4becbb">PKI · SHA</text>
+  </g>
+
+  <!-- transport -->
+  <g fill="none" stroke="#3f7a6d" stroke-width="1.4">
+    <path d="M198 152H238"/>
+    <path d="M354 170H382V118H412"/>
+  </g>
+  <path d="m232 148 7 4-7 4M376 114l7 4-7 4" fill="none" stroke="#4becbb" stroke-width="1.4"/>
+  <g class="art-label" fill="#4becbb">
+    <text x="205" y="145">TLS</text>
+    <text x="366" y="160">HTTPS</text>
+  </g>
+  <path d="M121 200V154" fill="none" stroke="#4b656d" stroke-dasharray="3 5"/>
+  <path d="m116 160 5-7 5 7" fill="none" stroke="#4b656d"/>
+
+  <!-- device -->
+  <g>
+    <rect x="396" y="54" width="208" height="252" rx="14" fill="#0b151a" stroke="#2b4a53"/>
+    <text x="414" y="78" class="art-label" fill="#dff7f0" style="font-size:10px">RASPBERRY PI</text>
+    <text x="414" y="92" class="art-label" fill="#5f7880">YOCTO · U-BOOT</text>
+
+    <rect x="412" y="100" width="176" height="32" rx="7" fill="#0c171b" stroke="#2b4a53"/>
+    <circle cx="426" cy="116" r="2.5" fill="#4becbb"/>
+    <text x="435" y="119" class="art-label" fill="#9fd9c8">DEVICE AGENT</text>
+    <text x="578" y="119" text-anchor="end" class="art-label" fill="#4b656d">AUTH</text>
+
+    <rect x="412" y="142" width="176" height="54" rx="8" fill="#4becbb" fill-opacity=".055" stroke="#4becbb" stroke-opacity=".55"/>
+    <text x="426" y="162" class="art-label" fill="#dff7f0">SLOT A</text>
+    <text x="426" y="178" class="art-label" fill="#5f7880">ACTIVE · KNOWN GOOD</text>
+    <circle cx="570" cy="160" r="3" fill="#4becbb"/>
+    <text x="562" y="164" text-anchor="end" class="art-label" fill="#4becbb">RUN</text>
+
+    <rect x="412" y="204" width="176" height="54" rx="8" fill="#0b151a" stroke="#34515a" stroke-dasharray="4 5"/>
+    <text x="426" y="224" class="art-label" fill="#c8d8dc">SLOT B</text>
+    <text x="426" y="240" class="art-label" fill="#5f7880">STANDBY · NEXT IMAGE</text>
+
+    <rect x="412" y="266" width="176" height="28" rx="7" fill="#0c171b" stroke="#2b4a53"/>
+    <text x="424" y="284" class="art-label" fill="#9fd9c8">RAUC VERIFY</text>
+    <path d="m556 275 2.5 2.5 5-5.5" fill="none" stroke="#4becbb" stroke-width="1.4" stroke-linecap="round"/>
+    <text x="570" y="284" text-anchor="end" class="art-label" fill="#ffb26b">ROLLBACK</text>
+  </g>
+
+  <g class="art-label" fill="#4b656d">
+    <text x="32" y="332">DEVICE AUTH · SIGNED ARTIFACTS · A/B SLOTS · AUTOMATIC ROLLBACK</text>
+    <text x="608" y="332" text-anchor="end">meta-updatini</text>
+  </g>
+  <g fill="none" stroke="#294650" opacity=".7">
+    <path d="M20 44V20h24M596 20h24v24M20 316v24h24M620 316v24h-24"/>
+  </g>
+</svg>
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-index">01</span>
+              <span class="project-kicker">Secure OTA · Embedded Linux</span>
+            </div>
+            <h3>Updatini</h3>
+            <p class="project-sub">Secure OTA update platform for Yocto</p>
+            <p class="project-desc">An end-to-end OTA platform: a Yocto layer for RAUC A/B updates, a device agent for authenticated polling, and a Cloudflare backend for signed bundles and targeted releases.</p>
+            <ul class="chip-list"><li class="chip">Yocto</li><li class="chip">RAUC</li><li class="chip">U-Boot</li><li class="chip">Cloudflare</li><li class="chip">Raspberry Pi</li><li class="chip">TLS</li><li class="chip">PKI</li></ul>
+            <span class="project-cta">View case study <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
+          </div>
+        </a>
+
+        <a class="project project--md" href="projects/seadrone.html" aria-label="View the SeaDrone project" data-reveal style="--d:.06s">
           <div class="project-art">
             <svg class="art-svg" viewBox="0 0 640 360" role="img" aria-label="Radar-style illustration of the SeaDrone with four rotors and detected contact blips">
               <defs>
@@ -599,7 +706,7 @@
                 <text x="254" y="249" class="art-label" fill="#c9955d">CONTACT 02</text>
               </g>
               <g class="art-label">
-                <text x="32" y="38" fill="#4becbb">SEADRONE / 01</text>
+                <text x="32" y="38" fill="#4becbb">SEADRONE / 02</text>
                 <text x="32" y="54" fill="#5f7880">AUTONOMOUS MARITIME SYSTEM</text>
                 <text x="32" y="332" fill="#5f7880">36.8065° N · 10.1815° E</text>
                 <text x="608" y="332" text-anchor="end" fill="#5f7880">YOLOV8N · LORA · PID</text>
@@ -612,26 +719,18 @@
           </div>
           <div class="project-body">
             <div class="project-top">
-              <span class="project-index">01</span>
+              <span class="project-index">02</span>
               <span class="project-kicker">Autonomous systems</span>
             </div>
             <h3>SeaDrone</h3>
-            <p class="project-sub">Custom flight control · edge AI vision · long-range telemetry</p>
-            <p class="project-desc">
-              An autonomous maritime drone with custom ESP32 flight control and YOLOv8n edge
-              vision on Raspberry Pi 4 to detect people in distress, support rescue operations,
-              and monitor maritime areas.
-            </p>
-            <ul class="chip-list">
-              <li class="chip">C++</li><li class="chip">Python</li><li class="chip">ESP32</li>
-              <li class="chip">YOLOv8</li><li class="chip">FastAPI</li><li class="chip">OpenCV</li>
-              <li class="chip">LoRa</li><li class="chip">PID</li>
-            </ul>
+            <p class="project-sub">Custom flight control, edge AI vision, and long-range telemetry</p>
+            <p class="project-desc">A maritime drone with a custom ESP32 flight controller and YOLOv8n edge vision on Raspberry Pi 4, built to spot people in distress and assist rescue operations.</p>
+            <ul class="chip-list"><li class="chip">C++</li><li class="chip">Python</li><li class="chip">ESP32</li><li class="chip">YOLOv8</li><li class="chip">FastAPI</li><li class="chip">OpenCV</li><li class="chip">LoRa</li><li class="chip">PID</li></ul>
+            <span class="project-cta">View case study <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
           </div>
-        </article>
+        </a>
 
-        <!-- Zaater OS -->
-        <article class="project" data-reveal style="--d:.08s">
+        <a class="project project--lg" href="projects/zaater-os.html" aria-label="View the Zaater OS project" data-reveal>
           <div class="project-art">
             <svg class="art-svg" viewBox="0 0 640 360" role="img" aria-label="Layered illustration of the Zaater OS embedded Linux stack with a field gateway, on-device machine learning, ESP32 nodes, and soil sensors">
               <defs>
@@ -643,7 +742,7 @@
               <rect width="640" height="360" fill="url(#za-grid)" opacity=".5"/>
               <circle cx="300" cy="190" r="200" fill="url(#za-glow)"/>
               <g class="art-label">
-                <text x="32" y="38" fill="#4becbb">ZAATER OS / 02</text>
+                <text x="32" y="38" fill="#4becbb">ZAATER OS / 03</text>
                 <text x="32" y="54" fill="#5f7880">CUSTOM EMBEDDED LINUX</text>
                 <text x="608" y="38" text-anchor="end" fill="#5f7880">YOCTO · RPI 3B+</text>
               </g>
@@ -723,25 +822,18 @@
           </div>
           <div class="project-body">
             <div class="project-top">
-              <span class="project-index">02</span>
+              <span class="project-index">03</span>
               <span class="project-kicker">Embedded Linux</span>
             </div>
             <h3>Zaater OS</h3>
-            <p class="project-sub">Yocto-built Linux · on-device ML irrigation</p>
-            <p class="project-desc">
-              A custom Yocto image for a Raspberry Pi 3B+ field gateway that runs on-device ML
-              inference to schedule irrigation from soil moisture, temperature, and weather data
-              collected over MQTT from ESP32 nodes.
-            </p>
-            <ul class="chip-list">
-              <li class="chip">Yocto</li><li class="chip">Embedded Linux</li><li class="chip">RPi 3B+</li>
-              <li class="chip">ESP32</li><li class="chip">On-device ML</li><li class="chip">MQTT</li>
-            </ul>
+            <p class="project-sub">A custom Yocto distribution with on-device ML irrigation</p>
+            <p class="project-desc">A custom Yocto image for a Raspberry Pi 3B+ field gateway that runs on-device ML to schedule irrigation from soil, temperature, and weather data collected over MQTT.</p>
+            <ul class="chip-list"><li class="chip">Yocto</li><li class="chip">Embedded Linux</li><li class="chip">Raspberry Pi 3B+</li><li class="chip">ESP32</li><li class="chip">On-device ML</li><li class="chip">MQTT</li><li class="chip">C/C++</li></ul>
+            <span class="project-cta">View case study <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
           </div>
-        </article>
+        </a>
 
-        <!-- Fault-tolerant boot -->
-        <article class="project" data-reveal>
+        <a class="project project--md" href="projects/fault-tolerant-boot.html" aria-label="View the Fault-Tolerant Boot project" data-reveal style="--d:.06s">
           <div class="project-art">
             <svg class="art-svg" viewBox="0 0 640 360" role="img" aria-label="Diagram of a fault-tolerant boot flow where U-Boot falls back from a primary Yocto partition to a minimal recovery partition">
               <defs>
@@ -751,7 +843,7 @@
               <rect width="640" height="360" fill="url(#ft-bg)"/>
               <rect width="640" height="360" fill="url(#ft-grid)" opacity=".5"/>
               <g class="art-label">
-                <text x="32" y="38" fill="#4becbb">BOOT RECOVERY / 03</text>
+                <text x="32" y="38" fill="#4becbb">BOOT RECOVERY / 04</text>
                 <text x="32" y="54" fill="#5f7880">FAULT-TOLERANT EMBEDDED LINUX</text>
                 <text x="608" y="38" text-anchor="end" fill="#5f7880">QEMU ARM64</text>
               </g>
@@ -806,25 +898,18 @@
           </div>
           <div class="project-body">
             <div class="project-top">
-              <span class="project-index">03</span>
+              <span class="project-index">04</span>
               <span class="project-kicker">Embedded Linux</span>
             </div>
             <h3>Fault-Tolerant Boot</h3>
-            <p class="project-sub">Automatic boot-failure detection &amp; recovery</p>
-            <p class="project-desc">
-              A U-Boot flow with automatic fallback from a standard Yocto image to a minimal
-              recovery image after repeated boot failures — plus boot-attempt tracking and
-              userspace success confirmation, validated in QEMU ARM64.
-            </p>
-            <ul class="chip-list">
-              <li class="chip">Yocto</li><li class="chip">U-Boot</li><li class="chip">QEMU</li>
-              <li class="chip">ARM64</li><li class="chip">Bash</li><li class="chip">FIT</li>
-            </ul>
+            <p class="project-sub">Automatic boot-failure detection and recovery</p>
+            <p class="project-desc">A U-Boot flow with automatic fallback from a standard Yocto image to a minimal recovery image after repeated boot failures, plus boot-attempt tracking and userspace confirmation.</p>
+            <ul class="chip-list"><li class="chip">Yocto</li><li class="chip">U-Boot</li><li class="chip">QEMU</li><li class="chip">ARM64</li><li class="chip">Bash</li><li class="chip">FIT signatures</li></ul>
+            <span class="project-cta">View case study <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
           </div>
-        </article>
+        </a>
 
-        <!-- Weather station -->
-        <article class="project" data-reveal style="--d:.08s">
+        <a class="project project--half" href="projects/weather-station.html" aria-label="View the Weather Station project" data-reveal>
           <div class="project-art">
             <svg class="art-svg" viewBox="0 0 640 360" role="img" aria-label="Illustration of an STM32F407 weather station running a neural network for on-device anomaly detection">
               <defs>
@@ -836,7 +921,7 @@
               <rect width="640" height="360" fill="url(#ws-grid)" opacity=".5"/>
               <circle cx="300" cy="170" r="190" fill="url(#ws-glow)"/>
               <g class="art-label">
-                <text x="32" y="38" fill="#4becbb">WEATHER STATION / 04</text>
+                <text x="32" y="38" fill="#4becbb">WEATHER STATION / 05</text>
                 <text x="32" y="54" fill="#5f7880">EDGE AI ON STM32F407</text>
                 <text x="608" y="38" text-anchor="end" fill="#5f7880">X-CUBE-AI</text>
               </g>
@@ -900,24 +985,18 @@
           </div>
           <div class="project-body">
             <div class="project-top">
-              <span class="project-index">04</span>
+              <span class="project-index">05</span>
               <span class="project-kicker">Edge AI</span>
             </div>
             <h3>Weather Station</h3>
             <p class="project-sub">Neural inference on an STM32F407</p>
-            <p class="project-desc">
-              A weather station running a TensorFlow-trained neural network directly on-device for
-              anomaly detection and prediction on sensor data, deployed with X-CUBE-AI.
-            </p>
-            <ul class="chip-list">
-              <li class="chip">STM32F407</li><li class="chip">X-CUBE-AI</li>
-              <li class="chip">TensorFlow</li><li class="chip">C</li>
-            </ul>
+            <p class="project-desc">A weather station running a TensorFlow-trained model on an STM32F407 with X-CUBE-AI for anomaly detection and prediction on live sensor data.</p>
+            <ul class="chip-list"><li class="chip">STM32F407</li><li class="chip">X-CUBE-AI</li><li class="chip">TensorFlow</li><li class="chip">C</li><li class="chip">Edge AI</li></ul>
+            <span class="project-cta">View case study <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
           </div>
-        </article>
+        </a>
 
-        <!-- Smart parking -->
-        <article class="project" data-reveal style="--d:.16s">
+        <a class="project project--half" href="projects/smart-parking.html" aria-label="View the Smart Parking project" data-reveal style="--d:.06s">
           <div class="project-art">
             <svg class="art-svg" viewBox="0 0 640 360" role="img" aria-label="Top-down illustration of a smart parking lot with computer vision detection, a vacant highlighted bay, and RFID access">
               <defs>
@@ -928,7 +1007,7 @@
               <rect width="640" height="360" fill="url(#sp-bg)"/>
               <rect width="640" height="360" fill="url(#sp-grid)" opacity=".5"/>
               <g class="art-label">
-                <text x="32" y="38" fill="#4becbb">SMART PARKING / 05</text>
+                <text x="32" y="38" fill="#4becbb">SMART PARKING / 06</text>
                 <text x="32" y="54" fill="#5f7880">VISION · RFID · TOUCH HMI</text>
                 <text x="608" y="38" text-anchor="end" fill="#5f7880">ESP32-CAM</text>
               </g>
@@ -988,22 +1067,16 @@
           </div>
           <div class="project-body">
             <div class="project-top">
-              <span class="project-index">05</span>
-              <span class="project-kicker">IoT &amp; vision</span>
+              <span class="project-index">06</span>
+              <span class="project-kicker">IoT & vision</span>
             </div>
             <h3>Smart Parking</h3>
-            <p class="project-sub">Computer vision · RFID access · touch HMI</p>
-            <p class="project-desc">
-              A parking system that detects vacant spots with computer vision, controls entry and
-              exit with RFID authentication and access logging, and shows live status on a
-              touchscreen HMI and a mobile registration app.
-            </p>
-            <ul class="chip-list">
-              <li class="chip">ESP32</li><li class="chip">ESP32-CAM</li><li class="chip">OpenCV</li>
-              <li class="chip">RFID</li><li class="chip">Supabase</li><li class="chip">UART · I2C</li>
-            </ul>
+            <p class="project-sub">Computer vision, RFID access, and a touch HMI</p>
+            <p class="project-desc">A parking system combining ESP32-CAM computer vision, RFID authentication, access logging, a touchscreen HMI, and a Supabase-backed mobile registration app.</p>
+            <ul class="chip-list"><li class="chip">ESP32</li><li class="chip">ESP32-CAM</li><li class="chip">OpenCV</li><li class="chip">RFID</li><li class="chip">Supabase</li><li class="chip">UART · I2C</li></ul>
+            <span class="project-cta">View case study <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
           </div>
-        </article>
+        </a>
 
       </div>
 
@@ -1033,7 +1106,7 @@
           <p class="skill-note">Daily drivers for firmware and tooling.</p>
           <ul class="chip-list">
             <li class="chip is-core">C</li><li class="chip is-core">C++</li><li class="chip">Rust</li>
-            <li class="chip">Python</li><li class="chip">Bash</li>
+            <li class="chip">Go</li><li class="chip">Python</li><li class="chip">Bash</li>
           </ul>
         </article>
 
@@ -1071,8 +1144,8 @@
           <h3>Embedded Linux</h3>
           <p class="skill-note">Custom images and boot flows.</p>
           <ul class="chip-list">
-            <li class="chip is-core">Yocto</li><li class="chip">Buildroot</li>
-            <li class="chip">U-Boot</li><li class="chip">Raspberry Pi</li>
+            <li class="chip is-core">Yocto</li><li class="chip">RAUC</li>
+            <li class="chip">Buildroot</li><li class="chip">U-Boot</li><li class="chip">Raspberry Pi</li>
           </ul>
         </article>
 
@@ -1085,7 +1158,7 @@
           <p class="skill-note">Trust from boot to transport.</p>
           <ul class="chip-list">
             <li class="chip is-core">Secure Boot</li><li class="chip is-core">Secure Firmware Install</li>
-            <li class="chip">TLS</li>
+            <li class="chip">TLS</li><li class="chip">PKI</li>
           </ul>
         </article>
 
@@ -1125,7 +1198,7 @@
           <p class="skill-note">Build, emulate, ship.</p>
           <ul class="chip-list">
             <li class="chip">Git</li><li class="chip">Docker</li><li class="chip">KVM / QEMU</li>
-            <li class="chip">Linux (RedHat, Debian)</li>
+            <li class="chip">Cloudflare Workers</li><li class="chip">Linux (RedHat, Debian)</li>
           </ul>
         </article>
       </div>

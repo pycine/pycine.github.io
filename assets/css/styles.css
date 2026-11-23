@@ -1113,14 +1113,16 @@ h2 {
   grid-column: span 4;
   display: flex;
   flex-direction: column;
+  color: inherit;
   border: 1px solid var(--line);
   border-radius: 18px;
   background: linear-gradient(180deg, rgba(255, 255, 255, .022), transparent 55%), var(--panel);
   overflow: hidden;
   transition: transform .4s var(--ease), border-color .4s ease, box-shadow .4s ease;
 }
-.project--feature { grid-column: span 7; }
-.project:nth-child(2) { grid-column: span 5; }
+.project--lg { grid-column: span 7; }
+.project--md { grid-column: span 5; }
+.project--half { grid-column: span 6; }
 .project::after {
   content: "";
   position: absolute;
@@ -1138,6 +1140,11 @@ h2 {
   box-shadow: 0 30px 60px rgba(0, 0, 0, .34);
 }
 .project:hover::after { opacity: 1; }
+.project:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-color: rgba(75, 236, 187, .4);
+}
 
 .project-art {
   position: relative;
@@ -1148,8 +1155,9 @@ h2 {
   background: #080d11;
   overflow: hidden;
 }
-.project--feature .project-art,
-.project:nth-child(2) .project-art { height: 278px; }
+.project--lg .project-art,
+.project--md .project-art { height: 278px; }
+.project--half .project-art { height: 240px; }
 .project-art::after {
   content: "";
   position: absolute;
@@ -1185,7 +1193,8 @@ h2 {
   flex: 1;
   padding: 22px 24px 24px;
 }
-.project--feature .project-body { padding: 26px 28px 28px; }
+.project--lg .project-body { padding: 26px 28px 28px; }
+.project--half .project-body { padding: 24px 26px 26px; }
 .project-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .project-index {
   font-family: var(--mono);
@@ -1209,7 +1218,8 @@ h2 {
   letter-spacing: -.03em;
   color: #f2f8f9;
 }
-.project--feature .project-body h3 { font-size: 1.9rem; }
+.project--lg .project-body h3 { font-size: 1.9rem; }
+.project--half .project-body h3 { font-size: 1.58rem; }
 .project-sub {
   margin-top: 6px;
   font-family: var(--mono);
@@ -1226,7 +1236,21 @@ h2 {
   color: var(--muted);
 }
 .project .chip-list { margin-top: auto; padding-top: 0; }
-.project--feature .project-desc { font-size: .93rem; max-width: 58ch; }
+.project--lg .project-desc { font-size: .93rem; max-width: 58ch; }
+.project-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 18px;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #6f818c;
+  transition: color .25s ease, gap .25s ease;
+}
+.project-cta .icon { width: 12px; height: 12px; }
+.project:hover .project-cta { color: var(--accent); gap: 9px; }
 
 .skills-foot {
   display: flex;
@@ -1712,12 +1736,12 @@ h2 {
   .hero-title { font-size: clamp(3.2rem, 8.4vw, 4.6rem); }
   .scroll-cue { display: none; }
 
-  .project--feature { grid-column: span 7; }
-  .project:nth-child(2) { grid-column: span 5; }
-  .project:nth-child(n+3) { grid-column: span 6; }
-  .project--feature .project-art,
-  .project:nth-child(2) .project-art { height: 220px; }
-  .project:nth-child(n+3) .project-art { height: 210px; }
+  .project--lg,
+  .project--md,
+  .project--half { grid-column: span 6; }
+  .project--lg .project-art,
+  .project--md .project-art,
+  .project--half .project-art { height: 220px; }
 
   .skill-card { grid-column: span 6; }
   .skill-card:nth-child(7),
@@ -1770,16 +1794,18 @@ h2 {
   .section-sub { font-size: .93rem; }
 
   .project-grid { gap: 12px; }
-  .project--feature,
-  .project:nth-child(2),
-  .project:nth-child(n+3) { grid-column: span 12; }
+  .project--lg,
+  .project--md,
+  .project--half { grid-column: span 12; }
   .project-art,
-  .project--feature .project-art,
-  .project:nth-child(2) .project-art,
-  .project:nth-child(n+3) .project-art { height: 224px; }
-  .project-body { padding: 20px; }
-  .project--feature .project-body { padding: 22px; }
-  .project--feature .project-body h3 { font-size: 1.6rem; }
+  .project--lg .project-art,
+  .project--md .project-art,
+  .project--half .project-art { height: 224px; }
+  .project-body,
+  .project--lg .project-body,
+  .project--half .project-body { padding: 20px; }
+  .project--lg .project-body h3,
+  .project--half .project-body h3 { font-size: 1.6rem; }
 
   .skill-grid { gap: 10px; }
   .skill-card,
@@ -1829,9 +1855,9 @@ h2 {
   .exp-list li { font-size: .89rem; }
 
   .project-art,
-  .project--feature .project-art,
-  .project:nth-child(2) .project-art,
-  .project:nth-child(n+3) .project-art { height: 190px; }
+  .project--lg .project-art,
+  .project--md .project-art,
+  .project--half .project-art { height: 190px; }
   .project-body h3 { font-size: 1.3rem; }
   .project-desc { font-size: .85rem; }
 

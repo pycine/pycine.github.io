@@ -1,15 +1,19 @@
 # Daoudi Mohamed Yacine — Portfolio
 
-A hand-built, single-page portfolio for an embedded systems engineer. No frameworks, no
-build step, no external runtime dependencies — just HTML, CSS, vanilla JS, and self-hosted
-variable fonts.
+A hand-built portfolio for an embedded systems engineer: a main page plus a dedicated
+case study for every project. No frameworks, no build step, no external runtime
+dependencies — just HTML, CSS, vanilla JS, and self-hosted variable fonts.
 
 ![Portfolio preview](screenshots/hero-desktop.jpg)
+
+A case study from the new project pages:
+
+![Updatini case study](screenshots/updatini.jpg)
 
 ## Highlights
 
 - Custom "hardware lab" design system: dark PCB palette, copper accents, circuit typography.
-- Hand-drawn inline SVG artwork for every project (radar, Linux stack, boot flow, neural net, parking lot).
+- Six projects, each with a dedicated case-study page and hand-drawn inline SVG artwork (OTA update flow, radar, Linux stack, boot recovery, neural net, parking lot).
 - Animated MCU board with signal pulses, boot log, 3D pointer tilt, and scroll-aware navigation.
 - Fully responsive, keyboard accessible, and respects `prefers-reduced-motion`.
 - Self-hosted fonts (Space Grotesk, Inter, JetBrains Mono) — zero third-party requests.
@@ -18,8 +22,10 @@ variable fonts.
 ## Structure
 
 ```
-index.html              all content and inline SVG artwork
+index.html              home page + project cards
+projects/*.html         one case study per project
 assets/css/styles.css   design system + responsive layout
+assets/css/project.css  case-study page layout
 assets/js/main.js       navigation, reveal, counters, tilt, copy email
 assets/fonts/           self-hosted variable WOFF2 files
 assets/resume.pdf       downloadable CV
@@ -38,23 +44,25 @@ python3 -m http.server 4173
 
 This is a static site, ready for GitHub Pages:
 
-1. Create a repository named `pycine.github.io` (or use a project repo).
-2. Copy `index.html`, `assets/`, and (optionally) `README.md` to the repository root.
-3. Commit and push to `main`, then enable Pages → Deploy from branch → `main` → `/ (root)`.
+1. Push this repository to GitHub.
+2. In the repository, open **Settings → Pages**.
+3. Deploy from branch `main`, folder `/ (root)`.
 
 No CI or build configuration is required.
 
-> If you publish under a different domain or repository path, update the canonical URL and
-> the `og:url` / `og:image` values in `index.html` to match.
+> Canonical and Open Graph URLs are set for the project site at
+> `https://pycine.github.io/portfolio/`. If you deploy this repository at the root domain
+> (`pycine.github.io`), update those URLs in `index.html` and `projects/*.html`.
 
 ## Customize
 
 - **Colours and type:** edit the design tokens at the top of `assets/css/styles.css`.
-- **Copy and links:** all content lives in `index.html`.
+- **Copy and links:** home content lives in `index.html`; project case studies live in `projects/`.
 - **CV:** replace `assets/resume.pdf` (used by every download button).
 - **Social image:** replace `assets/og.png` (1200 × 630).
 
 ## Content
 
-All content is sourced from the CV (`Mohamed_Yacine_Resume.pdf`) and its embedded
-certificate verification links. To update the CV, replace `assets/resume.pdf`.
+Content is sourced from the CV (`Mohamed_Yacine_Resume.pdf`), its embedded certificate
+verification links, and the Updatini project notes supplied for the portfolio. To update the
+CV, replace `assets/resume.pdf`.

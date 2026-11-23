@@ -82,12 +82,22 @@
 
   /* ---------------------------------------------- active nav link */
   const navLinks = [...doc.querySelectorAll('.nav-links a')];
-  const trackedSections = navLinks
-    .map((link) => doc.querySelector(link.getAttribute('href')))
+  const hashLinks = navLinks.filter((link) => {
+    const href = link.getAttribute('href') || '';
+    return href.startsWith('#') && href.length > 1;
+  });
+  const trackedSections = hashLinks
+    .map((link) => {
+      try {
+        return doc.querySelector(link.getAttribute('href'));
+      } catch {
+        return null;
+      }
+    })
     .filter(Boolean);
 
   function updateActiveLink() {
-    if (!navLinks.length) return;
+    if (!hashLinks.length || !trackedSections.length) return;
 
     const marker = window.scrollY + Math.min(window.innerHeight * 0.32, 220);
     let activeId = '';
@@ -100,7 +110,7 @@
       activeId = 'contact';
     }
 
-    navLinks.forEach((link) => {
+    hashLinks.forEach((link) => {
       const isActive = link.getAttribute('href') === `#${activeId}`;
       link.classList.toggle('is-active', isActive);
       if (isActive) link.setAttribute('aria-current', 'true');

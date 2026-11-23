@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zaater OS — A custom Yocto distribution with on-device ML irrigation | Daoudi Mohamed Yacine</title>
+<meta name="description" content="A Yocto-built Linux image for a Raspberry Pi 3B+ field gateway that runs on-device ML inference to schedule irrigation from soil, temperature, and weather data collected over MQTT.">
+<meta name="author" content="Daoudi Mohamed Yacine">
+<meta name="theme-color" content="#06080b">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pycine.github.io/portfolio/projects/zaater-os.html">
+<meta property="og:title" content="Zaater OS — A custom Yocto distribution with on-device ML irrigation">
+<meta property="og:description" content="A Yocto-built Linux image for a Raspberry Pi 3B+ field gateway that runs on-device ML inference to schedule irrigation from soil, temperature, and weather data collected over MQTT.">
+<meta property="og:image" content="https://pycine.github.io/portfolio/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Zaater OS — A custom Yocto distribution with on-device ML irrigation">
+<meta name="twitter:description" content="A Yocto-built Linux image for a Raspberry Pi 3B+ field gateway that runs on-device ML inference to schedule irrigation from soil, temperature, and weather data collected over MQTT.">
+<meta name="twitter:image" content="https://pycine.github.io/portfolio/assets/og.png">
+<link rel="canonical" href="https://pycine.github.io/portfolio/projects/zaater-os.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/jetbrains-mono.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/styles.css">
+<link rel="stylesheet" href="../assets/css/project.css">
+<script>document.documentElement.classList.add('js');</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Zaater OS",
+  "description": "A Yocto-built Linux image for a Raspberry Pi 3B+ field gateway that runs on-device ML inference to schedule irrigation from soil, temperature, and weather data collected over MQTT.",
+  "author": {
+    "@type": "Person",
+    "name": "Daoudi Mohamed Yacine",
+    "url": "https://pycine.github.io/portfolio/"
+  },
+  "keywords": "Yocto, Embedded Linux, Raspberry Pi 3B+, ESP32, On-device ML, MQTT, C/C++",
+  "about": [
+    "Yocto",
+    "Embedded Linux",
+    "Raspberry Pi 3B+",
+    "ESP32",
+    "On-device ML",
+    "MQTT",
+    "C/C++"
+  ]
+}
+</script>
+</head>
+<body id="top" class="case-page">
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<svg class="svg-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M20 12H4m6 6-6-6 6-6"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+  <symbol id="i-chip" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2.5"/><path d="M9.5 3v4M14.5 3v4M9.5 17v4M14.5 17v4M3 9.5h4M3 14.5h4M17 9.5h4M17 14.5h4"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12.5 5 5L20 6.5"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2.17c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.15v3.19c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7.5 8.5 6 8.5-6"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 20 6v6c0 4.6-3.4 7.6-8 9-4.6-1.4-8-4.4-8-9V6l8-3Z"/><path d="m8.5 12 2.4 2.4 4.6-5"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 0 0-14-4M4 4v5h5M4 13a8 8 0 0 0 14 4M20 20v-5h-5"/></symbol>
+  <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18a4.5 4.5 0 0 1-.6-9A6 6 0 0 1 19 10a3.5 3.5 0 0 1 0 8H7Z"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v7c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12v7c0 1.7 3.6 3 8 3s8-1.3 8-3v-7"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3l1.5-2h7L17 8h3v10H4V8Z"/><circle cx="12" cy="13" r="3"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4m0 0L7 9m5-5 5 5M5 20h14"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 4l-4 16"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 12.5 9 5 9-5M3 16.5l9 5 9-5"/></symbol>
+  <symbol id="i-nodes" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.2"/><circle cx="5" cy="18" r="2.2"/><circle cx="19" cy="18" r="2.2"/><path d="M10.5 6.8 6.5 16M13.5 6.8 17.5 16M7 18h10"/></symbol>
+  <symbol id="i-radio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/><path d="M8.5 8.5a5 5 0 0 0 0 7M15.5 15.5a5 5 0 0 0 0-7M5.6 5.6a9 9 0 0 0 0 12.8M18.4 18.4a9 9 0 0 0 0-12.8"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.8 12 5.8 21.5 12 21.5 12 18 18.2 12 18.2 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3.2"/></symbol>
+  <symbol id="i-terminal" viewBox="0 0 24 24"><path d="m4 7 5 5-5 5M12 17h8"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></symbol>
+</svg>
+
+<div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+<header class="site-header" id="site-header">
+  <div class="container nav-inner">
+    <a class="brand" href="../index.html" aria-label="Daoudi Mohamed Yacine — back to portfolio">
+      <span class="brand-mark" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-chip"/></svg></span>
+      <span class="brand-text">daoudi<span class="brand-dot">.</span></span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <a href="../index.html#projects" class="is-active" aria-current="location">Projects</a>
+      <a href="../index.html#experience">Experience</a>
+      <a href="../index.html#skills">Stack</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a class="btn btn-ghost btn-sm nav-resume" href="../assets/resume.pdf" target="_blank" rel="noopener">
+        Résumé <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <svg class="icon menu-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-menu"/></svg>
+        <svg class="icon close-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <nav aria-label="Mobile">
+      <a href="../index.html"><span>00</span>Home</a>
+      <a href="../index.html#projects"><span>01</span>Projects</a>
+      <a href="../index.html#experience"><span>02</span>Experience</a>
+      <a href="../index.html#skills"><span>03</span>Stack</a>
+      <a href="../index.html#contact"><span>04</span>Contact</a>
+    </nav>
+    <a class="btn btn-primary mobile-resume" href="../assets/resume.pdf" target="_blank" rel="noopener">
+      Download résumé <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-download"/></svg>
+    </a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="case-hero" aria-labelledby="case-title">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Portfolio</a>
+        <span class="crumb-sep" aria-hidden="true">/</span>
+        <a href="../index.html#projects">Projects</a>
+        <span class="crumb-sep" aria-hidden="true">/</span>
+        <span aria-current="page">Zaater OS</span>
+      </nav>
+
+      <div class="case-hero-grid">
+        <div class="case-copy" data-reveal>
+          <p class="kicker"><span class="kicker-num">03 / 06</span><span class="kicker-slash">/</span> Embedded Linux</p>
+          <h1 id="case-title">Zaater OS<span class="accent-dot">.</span></h1>
+          <p class="case-sub">A custom Yocto distribution with on-device ML irrigation</p>
+          <p class="case-summary">A Yocto-built Linux image for a Raspberry Pi 3B+ field gateway that runs on-device ML inference to schedule irrigation from soil, temperature, and weather data collected over MQTT.</p>
+          <ul class="chip-list"><li class="chip">Yocto</li><li class="chip">Embedded Linux</li><li class="chip">Raspberry Pi 3B+</li><li class="chip">ESP32</li><li class="chip">On-device ML</li><li class="chip">MQTT</li><li class="chip">C/C++</li></ul>
+          <div class="case-actions">
+            <a class="btn btn-primary" href="mailto:mohamedyacine.daoudi@proton.me?subject=Zaater%20OS%20%E2%80%94%20portfolio%20question">Discuss this project <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+            <a class="btn btn-ghost" href="../index.html#projects"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-left"/></svg> All projects</a>
+          </div>
+        </div>
+
+        <div class="case-art" data-reveal style="--d:.12s">
+          <svg class="art-svg" viewBox="0 0 640 360" role="img" aria-label="Layered illustration of the Zaater OS embedded Linux stack with a field gateway, on-device machine learning, ESP32 nodes, and soil sensors">
+              <defs>
+                <linearGradient id="za-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a1417"/><stop offset="1" stop-color="#060a0d"/></linearGradient>
+                <radialGradient id="za-glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#4becbb" stop-opacity=".14"/><stop offset="1" stop-color="#4becbb" stop-opacity="0"/></radialGradient>
+                <pattern id="za-grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#15262d" stroke-width="1"/></pattern>
+              </defs>
+              <rect width="640" height="360" fill="url(#za-bg)"/>
+              <rect width="640" height="360" fill="url(#za-grid)" opacity=".5"/>
+              <circle cx="300" cy="190" r="200" fill="url(#za-glow)"/>
+              <g class="art-label">
+                <text x="32" y="38" fill="#4becbb">ZAATER OS / 03</text>
+                <text x="32" y="54" fill="#5f7880">CUSTOM EMBEDDED LINUX</text>
+                <text x="608" y="38" text-anchor="end" fill="#5f7880">YOCTO · RPI 3B+</text>
+              </g>
+
+              <!-- layer 1 -->
+              <g>
+                <rect x="48" y="86" width="360" height="58" rx="10" fill="#0b151a" stroke="#2b4a53"/>
+                <rect x="48" y="86" width="3" height="58" fill="#4becbb"/>
+                <g transform="translate(66 102)" fill="none" stroke="#4becbb" stroke-width="1.3">
+                  <rect x="2" y="2" width="14" height="14" rx="3"/><path d="M6-2v4M12-2v4M6 16v4M12 16v4M-2 6h4M-2 12h4M16 6h4M16 12h4"/>
+                </g>
+                <text x="98" y="108" class="art-label" fill="#dff7f0" style="font-size:10px">FIELD GATEWAY</text>
+                <text x="98" y="124" class="art-label" fill="#5f7880">RASPBERRY PI 3B+</text>
+                <text x="390" y="120" text-anchor="end" class="art-label" fill="#4b656d">01</text>
+              </g>
+              <!-- layer 2 -->
+              <g>
+                <rect x="48" y="160" width="360" height="58" rx="10" fill="#0b151a" stroke="#2b4a53"/>
+                <rect x="48" y="160" width="3" height="58" fill="#2b4a53"/>
+                <g transform="translate(66 176)" fill="none" stroke="#69e7c4" stroke-width="1.3">
+                  <path d="m12 0 11 6-11 6L1 6l11-6Z"/><path d="m1 11 11 6 11-6M1 15l11 6 11-6"/>
+                </g>
+                <text x="98" y="182" class="art-label" fill="#dff7f0" style="font-size:10px">YOCTO LINUX</text>
+                <text x="98" y="198" class="art-label" fill="#5f7880">ON-DEVICE ML · IRRIGATION</text>
+                <text x="390" y="194" text-anchor="end" class="art-label" fill="#4b656d">02</text>
+              </g>
+              <!-- layer 3 -->
+              <g>
+                <rect x="48" y="234" width="360" height="58" rx="10" fill="#0b151a" stroke="#2b4a53"/>
+                <rect x="48" y="234" width="3" height="58" fill="#2b4a53"/>
+                <g transform="translate(66 250)" fill="none" stroke="#69e7c4" stroke-width="1.3">
+                  <path d="M12 23V9M7 14l5-5 5 5M4 23h16"/>
+                </g>
+                <text x="98" y="256" class="art-label" fill="#dff7f0" style="font-size:10px">ESP32 NODES</text>
+                <text x="98" y="272" class="art-label" fill="#5f7880">SOIL · TEMP · MQTT</text>
+                <text x="390" y="268" text-anchor="end" class="art-label" fill="#4b656d">03</text>
+              </g>
+
+              <!-- connectors -->
+              <g fill="none" stroke="#2b4a53">
+                <path d="M228 144v16M228 218v16"/>
+              </g>
+              <g fill="none" stroke="#4becbb" stroke-opacity=".65" stroke-dasharray="3 7" class="flow">
+                <path d="M228 144v16M228 218v16"/>
+              </g>
+              <text x="238" y="157" class="art-label" fill="#4b656d">MQTT</text>
+              <text x="238" y="231" class="art-label" fill="#4b656d">ETL</text>
+
+              <!-- sensor panel -->
+              <rect x="444" y="86" width="148" height="206" rx="12" fill="#0a1317" stroke="#2b4a53"/>
+              <text x="460" y="108" class="art-label" fill="#4becbb">SENSOR BUS</text>
+              <g class="art-label" fill="#5f7880">
+                <text x="460" y="138">SOIL MOISTURE</text>
+                <text x="460" y="172">TEMPERATURE</text>
+                <text x="460" y="206">WEATHER</text>
+              </g>
+              <rect x="460" y="146" width="116" height="5" rx="2.5" fill="#1b2f37"/>
+              <rect x="460" y="146" width="74" height="5" rx="2.5" fill="#4becbb" class="bar"/>
+              <rect x="460" y="180" width="116" height="5" rx="2.5" fill="#1b2f37"/>
+              <rect x="460" y="180" width="52" height="5" rx="2.5" fill="#4becbb" opacity=".7"/>
+              <g transform="translate(460 218)" fill="none" stroke="#ffb26b" stroke-width="1.2" opacity=".8">
+                <circle cx="8" cy="7" r="5"/><path d="M8 0v2M8 12v2M1 7h2M13 7h2M3.5 2.5l1.5 1.5M11 9.5l1.5 1.5M12.5 2.5 11 4M5 9.5 3.5 11"/>
+                <path d="M20 13h8a4 4 0 0 0 0-8h-1" transform="translate(4 -2)"/>
+              </g>
+              <text x="498" y="238" class="art-label" fill="#4b656d">24.6°C · 62%</text>
+              <path d="M460 260h116" stroke="#1e343c"/>
+              <text x="460" y="278" class="art-label" fill="#4becbb">SCHEDULE AUTO</text>
+
+              <g class="art-label" fill="#4b656d">
+                <text x="32" y="332">SOIL MOISTURE · TEMPERATURE · WEATHER VIA MQTT</text>
+                <text x="608" y="332" text-anchor="end">EDGE INFERENCE</text>
+              </g>
+              <g fill="none" stroke="#294650" opacity=".7">
+                <path d="M20 44V20h24M596 20h24v24M20 316v24h24M620 316v24h-24"/>
+              </g>
+            </svg>
+        </div>
+      </div>
+
+      <dl class="case-specs">
+        <div><dt>Platform</dt><dd>Raspberry Pi 3B+ · ESP32</dd></div><div><dt>OS</dt><dd>Yocto · Embedded Linux</dd></div><div><dt>Inference</dt><dd>On-device ML</dd></div><div><dt>Transport</dt><dd>MQTT</dd></div>
+      </dl>
+    </div>
+  </section>
+
+    <section class="case-section">
+      <div class="container case-layout">
+        <div class="case-rail"><span class="rail-num">01</span><span>Overview</span></div>
+        <div class="case-content" data-reveal>
+          <h2>A Linux distribution that decides at the edge.</h2><div class="case-prose"><p class="case-lead">Zaater OS is a custom Yocto distribution for an agricultural field gateway. Instead of shipping every sensor reading to a cloud service, the Raspberry Pi 3B+ runs the irrigation model locally and turns soil moisture, temperature, and weather data into a watering schedule.</p><p>The image receives telemetry over MQTT from ESP32 sensor nodes. Keeping inference on the gateway reduces the connectivity requirement and lets the system keep operating through network gaps.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="container case-layout">
+        <div class="case-rail"><span class="rail-num">02</span><span>Build</span></div>
+        <div class="case-content" data-reveal>
+          <h2>What I built</h2><ul class="case-list"><li><span class="case-check"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg></span><span>Built a custom Yocto Linux image for a Raspberry Pi 3B+ field gateway.</span></li><li><span class="case-check"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg></span><span>Integrated on-device ML inference to schedule irrigation from live sensor data.</span></li><li><span class="case-check"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg></span><span>Fused soil moisture, temperature, and weather inputs into an irrigation decision.</span></li><li><span class="case-check"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg></span><span>Ingested telemetry over MQTT from distributed ESP32 sensor nodes.</span></li><li><span class="case-check"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg></span><span>Kept the decision loop at the edge instead of depending on a remote service.</span></li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="container case-layout">
+        <div class="case-rail"><span class="rail-num">03</span><span>Architecture</span></div>
+        <div class="case-content" data-reveal>
+          <h2>From soil reading to watering decision</h2><div class="flow-grid flow-grid--4"><article class="flow-step"><span class="flow-num">01</span><h3>Sense</h3><p>ESP32 nodes collect soil moisture and environmental readings in the field.</p></article><article class="flow-step"><span class="flow-num">02</span><h3>Publish</h3><p>Readings travel over MQTT to the Raspberry Pi gateway.</p></article><article class="flow-step"><span class="flow-num">03</span><h3>Infer</h3><p>The Yocto image runs the ML model against the combined sensor inputs.</p></article><article class="flow-step"><span class="flow-num">04</span><h3>Act</h3><p>The gateway produces an irrigation schedule from the inference result.</p></article></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="container case-layout">
+        <div class="case-rail"><span class="rail-num">04</span><span>Highlights</span></div>
+        <div class="case-content" data-reveal>
+          <h2>Technical highlights</h2><div class="highlight-grid"><article class="highlight-card"><span class="highlight-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-layers"/></svg></span><h3>A custom distro</h3><p>The target image is built with Yocto, not assembled from a generic Raspberry Pi OS install.</p></article><article class="highlight-card"><span class="highlight-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-nodes"/></svg></span><h3>Edge inference</h3><p>The model runs on the gateway, where the data is already arriving — not in a remote cloud.</p></article><article class="highlight-card"><span class="highlight-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-terminal"/></svg></span><h3>Sensor fusion</h3><p>Soil moisture, temperature, and weather are combined into one decision instead of three independent readings.</p></article><article class="highlight-card"><span class="highlight-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-radio"/></svg></span><h3>Gateway architecture</h3><p>ESP32 nodes stay simple while the Linux gateway owns connectivity and inference.</p></article></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="container case-layout">
+        <div class="case-rail"><span class="rail-num">05</span><span>Stack</span></div>
+        <div class="case-content" data-reveal>
+          <h2>Stack</h2><div class="stack-grid"><div class="stack-group"><span class="stack-label">Build</span><ul class="chip-list"><li class="chip">Yocto</li><li class="chip">Embedded Linux</li></ul></div><div class="stack-group"><span class="stack-label">Hardware</span><ul class="chip-list"><li class="chip">Raspberry Pi 3B+</li><li class="chip">ESP32</li></ul></div><div class="stack-group"><span class="stack-label">Inference</span><ul class="chip-list"><li class="chip">On-device ML</li><li class="chip">C/C++</li></ul></div><div class="stack-group"><span class="stack-label">Transport</span><ul class="chip-list"><li class="chip">MQTT</li></ul></div></div>
+        </div>
+      </div>
+    </section>
+
+  <section class="case-section case-next-wrap">
+    <div class="container">
+      <a class="next-project" href="fault-tolerant-boot.html">
+        <span class="next-copy">
+          <span class="next-label">Next project · 04 / 06</span>
+          <span class="next-title">Fault-Tolerant Boot</span>
+          <span class="next-category">Embedded Linux</span>
+        </span>
+        <span class="next-arrow"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
+      </a>
+      <a class="case-back" href="../index.html#projects"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-left"/></svg> Back to all projects</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a class="brand" href="../index.html" aria-label="Daoudi Mohamed Yacine — back to portfolio">
+      <span class="brand-mark" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-chip"/></svg></span>
+      <span class="brand-text">daoudi<span class="brand-dot">.</span></span>
+    </a>
+    <p class="footer-note">© <span id="year">2026</span> Daoudi Mohamed Yacine</p>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="https://github.com/pycine" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/daoudi-med-yacine" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:mohamedyacine.daoudi@proton.me">Email</a>
+      <a href="../index.html#projects">All projects</a>
+      <a href="#top" class="back-top">Top <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>

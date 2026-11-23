@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Updatini — Secure OTA update platform for Yocto | Daoudi Mohamed Yacine</title>
+<meta name="description" content="A Yocto layer and serverless backend for authenticated, rollback-safe updates on Raspberry Pi — with signed RAUC bundles, device identity, and automatic A/B recovery.">
+<meta name="author" content="Daoudi Mohamed Yacine">
+<meta name="theme-color" content="#06080b">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pycine.github.io/portfolio/projects/updatini.html">
+<meta property="og:title" content="Updatini — Secure OTA update platform for Yocto">
+<meta property="og:description" content="A Yocto layer and serverless backend for authenticated, rollback-safe updates on Raspberry Pi — with signed RAUC bundles, device identity, and automatic A/B recovery.">
+<meta property="og:image" content="https://pycine.github.io/portfolio/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Updatini — Secure OTA update platform for Yocto">
+<meta name="twitter:description" content="A Yocto layer and serverless backend for authenticated, rollback-safe updates on Raspberry Pi — with signed RAUC bundles, device identity, and automatic A/B recovery.">
+<meta name="twitter:image" content="https://pycine.github.io/portfolio/assets/og.png">
+<link rel="canonical" href="https://pycine.github.io/portfolio/projects/updatini.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/jetbrains-mono.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/styles.css">
+<link rel="stylesheet" href="../assets/css/project.css">
+<script>document.documentElement.classList.add('js');</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Updatini",
+  "description": "A Yocto layer and serverless backend for authenticated, rollback-safe updates on Raspberry Pi — with signed RAUC bundles, device identity, and automatic A/B recovery.",
+  "author": {
+    "@type": "Person",
+    "name": "Daoudi Mohamed Yacine",
+    "url": "https://pycine.github.io/portfolio/"
+  },
+  "keywords": "Yocto, RAUC, U-Boot, Cloudflare, Raspberry Pi, TLS, PKI",
+  "about": [
+    "Yocto",
+    "RAUC",
+    "U-Boot",
+    "Cloudflare",
+    "Raspberry Pi",
+    "TLS",
+    "PKI"
+  ]
+}
+</script>
+</head>
+<body id="top" class="case-page">
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<svg class="svg-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M20 12H4m6 6-6-6 6-6"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+  <symbol id="i-chip" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2.5"/><path d="M9.5 3v4M14.5 3v4M9.5 17v4M14.5 17v4M3 9.5h4M3 14.5h4M17 9.5h4M17 14.5h4"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12.5 5 5L20 6.5"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2.17c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.15v3.19c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7.5 8.5 6 8.5-6"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 20 6v6c0 4.6-3.4 7.6-8 9-4.6-1.4-8-4.4-8-9V6l8-3Z"/><path d="m8.5 12 2.4 2.4 4.6-5"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 0 0-14-4M4 4v5h5M4 13a8 8 0 0 0 14 4M20 20v-5h-5"/></symbol>
+  <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18a4.5 4.5 0 0 1-.6-9A6 6 0 0 1 19 10a3.5 3.5 0 0 1 0 8H7Z"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v7c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12v7c0 1.7 3.6 3 8 3s8-1.3 8-3v-7"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3l1.5-2h7L17 8h3v10H4V8Z"/><circle cx="12" cy="13" r="3"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4m0 0L7 9m5-5 5 5M5 20h14"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 4l-4 16"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 12.5 9 5 9-5M3 16.5l9 5 9-5"/></symbol>
+  <symbol id="i-nodes" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.2"/><circle cx="5" cy="18" r="2.2"/><circle cx="19" cy="18" r="2.2"/><path d="M10.5 6.8 6.5 16M13.5 6.8 17.5 16M7 18h10"/></symbol>
+  <symbol id="i-radio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/><path d="M8.5 8.5a5 5 0 0 0 0 7M15.5 15.5a5 5 0 0 0 0-7M5.6 5.6a9 9 0 0 0 0 12.8M18.4 18.4a9 9 0 0 0 0-12.8"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.8 12 5.8 21.5 12 21.5 12 18 18.2 12 18.2 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3.2"/></symbol>
+  <symbol id="i-terminal" viewBox="0 0 24 24"><path d="m4 7 5 5-5 5M12 17h8"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></symbol>
+</svg>
+
+<div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+<header class="site-header" id="site-header">
+  <div class="container nav-inner">
+    <a class="brand" href="../index.html" aria-label="Daoudi Mohamed Yacine — back to portfolio">
+      <span class="brand-mark" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-chip"/></svg></span>
+      <span class="brand-text">daoudi<span class="brand-dot">.</span></span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <a href="../index.html#projects" class="is-active" aria-current="location">Projects</a>
+      <a href="../index.html#experience">Experience</a>
+      <a href="../index.html#skills">Stack</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a class="btn btn-ghost btn-sm nav-resume" href="../assets/resume.pdf" target="_blank" rel="noopener">
+        Résumé <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <svg class="icon menu-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-menu"/></svg>
+        <svg class="icon close-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <nav aria-label="Mobile">
+      <a href="../index.html"><span>00</span>Home</a>
+      <a href="../index.html#projects"><span>01</span>Projects</a>
+      <a href="../index.html#experience"><span>02</span>Experience</a>
+      <a href="../index.html#skills"><span>03</span>Stack</a>
+      <a href="../index.html#contact"><span>04</span>Contact</a>
+    </nav>
+    <a class="btn btn-primary mobile-resume" href="../assets/resume.pdf" target="_blank" rel="noopener">
+      Download résumé <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-download"/></svg>
+    </a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="case-hero" aria-labelledby="case-title">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Portfolio</a>
+        <span class="crumb-sep" aria-hidden="true">/</span>
+        <a href="../index.html#projects">Projects</a>
+        <span class="crumb-sep" aria-hidden="true">/</span>
+        <span aria-current="page">Updatini</span>
+      </nav>
+
+      <div class="case-hero-grid">
+        <div class="case-copy" data-reveal>
+          <p class="kicker"><span class="kicker-num">01 / 06</span><span class="kicker-slash">/</span> Secure OTA · Embedded Linux</p>
+          <h1 id="case-title">Updatini<span class="accent-dot">.</span></h1>
+          <p class="case-sub">Secure OTA update platform for Yocto</p>
+          <p class="case-summary">A Yocto layer and serverless backend for authenticated, rollback-safe updates on Raspberry Pi — with signed RAUC bundles, device identity, and automatic A/B recovery.</p>
+          <ul class="chip-list"><li class="chip">Yocto</li><li class="chip">RAUC</li><li class="chip">U-Boot</li><li class="chip">Cloudflare</li><li class="chip">Raspberry Pi</li><li class="chip">TLS</li><li class="chip">PKI</li></ul>
+          <div class="case-actions">
+            <a class="btn btn-primary" href="mailto:mohamedyacine.daoudi@proton.me?subject=Updatini%20%E2%80%94%20portfolio%20question">Discuss this project <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+            <a class="btn btn-ghost" href="../index.html#projects"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-left"/></svg> All projects</a>
+          </div>
+        </div>
+
+        <div class="case-art" data-reveal style="--d:.12s">
+          <svg class="art-svg" viewBox="0 0 640 360" role="img" aria-label="Diagram of the Updatini OTA flow: signed RAUC bundles move from Cloudflare Workers, D1 and R2 to a Raspberry Pi with A/B update slots and automatic rollback">
+  <defs>
+    <linearGradient id="up-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a1419"/><stop offset="1" stop-color="#060a0d"/></linearGradient>
+    <radialGradient id="up-glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#4becbb" stop-opacity=".14"/><stop offset="1" stop-color="#4becbb" stop-opacity="0"/></radialGradient>
+    <pattern id="up-grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#15262d" stroke-width="1"/></pattern>
+  </defs>
+  <rect width="640" height="360" fill="url(#up-bg)"/>
+  <rect width="640" height="360" fill="url(#up-grid)" opacity=".5"/>
+  <circle cx="320" cy="180" r="210" fill="url(#up-glow)"/>
+
+  <g class="art-label">
+    <text x="32" y="38" fill="#4becbb">UPDATINI / 01</text>
+    <text x="32" y="54" fill="#5f7880">SECURE OTA · YOCTO · RAUC</text>
+    <text x="608" y="38" text-anchor="end" fill="#5f7880">RPI / CLOUDFLARE</text>
+  </g>
+
+  <!-- cloud + admin -->
+  <g>
+    <path d="M50 146a26 26 0 0 1 3-51 34 34 0 0 1 64 4 22 22 0 0 1 9 43H50Z" fill="#0b151a" stroke="#2b4a53"/>
+    <circle cx="76" cy="112" r="2.5" fill="#4becbb"/>
+    <text x="121" y="166" text-anchor="middle" class="art-label" fill="#4becbb">CLOUDFLARE</text>
+    <text x="121" y="180" text-anchor="middle" class="art-label" fill="#5f7880">WORKERS · D1 · R2</text>
+
+    <rect x="44" y="200" width="154" height="74" rx="10" fill="#0b151a" stroke="#2b4a53"/>
+    <text x="58" y="222" class="art-label" fill="#dff7f0" style="font-size:9.5px">ADMIN PORTAL</text>
+    <text x="58" y="238" class="art-label" fill="#5f7880">PUBLISH · TARGET</text>
+    <g transform="translate(166 218)" fill="none" stroke="#4becbb" stroke-width="1.3">
+      <path d="M8 12V1M4 5l4-4 4 4M1 15h14"/>
+    </g>
+    <text x="58" y="260" class="art-label" fill="#4b656d">DEVICE / BOARD SCOPE</text>
+  </g>
+
+  <!-- bundle -->
+  <g>
+    <rect x="244" y="116" width="110" height="108" rx="11" fill="#0c171b" stroke="#4becbb" stroke-opacity=".55"/>
+    <path d="M299 132 314 138v13c0 8-6.5 13-15 16-8.5-3-15-8-15-16v-13l15-6Z" fill="none" stroke="#4becbb" stroke-width="1.4"/>
+    <path d="m292 150 4.5 4.5 8.5-9" fill="none" stroke="#4becbb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="299" y="180" text-anchor="middle" class="art-label" fill="#dff7f0" style="font-size:9.5px">SIGNED</text>
+    <text x="299" y="195" text-anchor="middle" class="art-label" fill="#5f7880">RAUC BUNDLE</text>
+    <path d="M262 208h74" stroke="#1f383f"/>
+    <text x="299" y="216" text-anchor="middle" class="art-label" fill="#4becbb">PKI · SHA</text>
+  </g>
+
+  <!-- transport -->
+  <g fill="none" stroke="#3f7a6d" stroke-width="1.4">
+    <path d="M198 152H238"/>
+    <path d="M354 170H382V118H412"/>
+  </g>
+  <path d="m232 148 7 4-7 4M376 114l7 4-7 4" fill="none" stroke="#4becbb" stroke-width="1.4"/>
+  <g class="art-label" fill="#4becbb">
+    <text x="205" y="145">TLS</text>
+    <text x="366" y="160">HTTPS</text>
+  </g>
+  <path d="M121 200V154" fill="none" stroke="#4b656d" stroke-dasharray="3 5"/>
+  <path d="m116 160 5-7 5 7" fill="none" stroke="#4b656d"/>
+
+  <!-- device -->
+  <g>
+    <rect x="396" y="54" width="208" height="252" rx="14" fill="#0b151a" stroke="#2b4a53"/>
+    <text x="414" y="78" class="art-label" fill="#dff7f0" style="font-size:10px">RASPBERRY PI</text>
+    <text x="414" y="92" class="art-label" fill="#5f7880">YOCTO · U-BOOT</text>
+
+    <rect x="412" y="100" width="176" height="32" rx="7" fill="#0c171b" stroke="#2b4a53"/>
+    <circle cx="426" cy="116" r="2.5" fill="#4becbb"/>
+    <text x="435" y="119" class="art-label" fill="#9fd9c8">DEVICE AGENT</text>
+    <text x="578" y="119" text-anchor="end" class="art-label" fill="#4b656d">AUTH</text>
+
+    <rect x="412" y="142" width="176" height="54" rx="8" fill="#4becbb" fill-opacity=".055" stroke="#4becbb" stroke-opacity=".55"/>
+    <text x="426" y="162" class="art-label" fill="#dff7f0">SLOT A</text>
+    <text x="426" y="178" class="art-label" fill="#5f7880">ACTIVE · KNOWN GOOD</text>
+    <circle cx="570" cy="160" r="3" fill="#4becbb"/>
+    <text x="562" y="164" text-anchor="end" class="art-label" fill="#4becbb">RUN</text>
+
+    <rect x="412" y="204" width="176" height="54" rx="8" fill="#0b151a" stroke="#34515a" stroke-dasharray="4 5"/>
+    <text x="426" y="224" class="art-label" fill="#c8d8dc">SLOT B</text>
+    <text x="426" y="240" class="art-label" fill="#5f7880">STANDBY · NEXT IMAGE</text>
+
+    <rect x="412" y="266" width="176" height="28" rx="7" fill="#0c171b" stroke="#2b4a53"/>
+    <text x="424" y="284" class="art-label" fill="#9fd9c8">RAUC VERIFY</text>
+    <path d="m556 275 2.5 2.5 5-5.5" fill="none" stroke="#4becbb" stroke-width="1.4" stroke-linecap="round"/>
+    <text x="570" y="284" text-anchor="end" class="art-label" fill="#ffb26b">ROLLBACK</text>
+  </g>
+
+  <g class="art-label" fill="#4b656d">
+    <text x="32" y="332">DEVICE AUTH · SIGNED ARTIFACTS · A/B SLOTS · AUTOMATIC ROLLBACK</text>
+    <text x="608" y="332" text-anchor="end">meta-updatini</text>
+  </g>
+  <g fill="none" stroke="#294650" opacity=".7">
+    <path d="M20 44V20h24M596 20h24v24M20 316v24h24M620 316v24h-24"/>
+  </g>
+</svg>
+        </div>
+      </div>
+
+      <dl class="case-specs">
+        <div><dt>Platform</dt><dd>Raspberry Pi · Yocto</dd></div><div><dt>Update model</dt><dd>RAUC · A/B slots</dd></div><div><dt>Control plane</dt><dd>Cloudflare Workers</dd></div><div><dt>Trust</dt><dd>Device auth · PKI · signatures</dd></div>
+      </dl>
+    </div>
+  </section>
+
+    <section class="case-section">
+      <div class="container case-layout">
+        <div class="case-rail"><span class="rail-num">01</span><span>Overview</span></div>
+        <div class="case-content" data-reveal>
+          <h2>Updates that can’t brick the fleet.</h2><div class="case-prose"><p class="case-lead">Updatini is a complete over-the-air update path for Yocto-based devices. It combines <code>meta-updatini</code>, a Yocto layer that integrates RAUC A/B updates, with a device agent and a serverless control plane on Cloudflare. The project was built for Raspberry Pi targets around a simple rule: an update should never be able to brick a device or execute untrusted code.</p><p>RAUC provides the bottom half of that guarantee: the running system is never overwritten, and a failed boot can fall back to the previous slot. The rest of the project supplies the fleet plumbing around it — device identity, first-boot registration, authenticated polling, targeted releases, and an admin portal that publishes signed bundles.</p><p>The result is a small, deployable update system that can authenticate devices, deliver only signed artifacts, and recover from failure without a technician.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="container case-layout">
+        <div class="case-rail"><span class="rail-num">02</span><span>Build</span></div>
+        <div class="case-content" data-reveal>
+          <h2>What I built</h2><ul class="case-list"><li><span class="case-check"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg></span><span>Built <code>meta-updatini</code>, a Yocto layer that integrates RAUC A/B updates into the image build.</span></li><li><span class="case-check"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg></span><span>Built a device agent for first-boot self-registration, authenticated polling, signed-bundle installation, and automatic rollback.</span></li><li><span class="case-check"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg></span><span>Designed a defense-in-depth trust model: device authentication to the server plus RAUC signature verification before install.</span></li><li><span class="case-check"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg></span><span>Developed a serverless backend on Cloudflare — Workers, D1, and R2 — with an admin upload portal that publishes updates and targets specific devices or boards.</span></li><li><span class="case-check"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg></span><span>Validated the failure path: power loss mid-update, corrupted bundle, downgrade attempt, and unauthorized device.</span></li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="container case-layout">
+        <div class="case-rail"><span class="rail-num">03</span><span>Architecture</span></div>
+        <div class="case-content" data-reveal>
+          <h2>The update path</h2><div class="flow-grid flow-grid--5"><article class="flow-step"><span class="flow-num">01</span><h3>Build</h3><p>Yocto and <code>meta-updatini</code> produce a signed RAUC bundle for the target board.</p></article><article class="flow-step"><span class="flow-num">02</span><h3>Publish</h3><p>The admin portal uploads the bundle to R2, records release metadata in D1, and targets devices or boards.</p></article><article class="flow-step"><span class="flow-num">03</span><h3>Authenticate</h3><p>The device agent presents its identity over TLS and polls the Workers API for an applicable release.</p></article><article class="flow-step"><span class="flow-num">04</span><h3>Verify</h3><p>The agent downloads the bundle and RAUC verifies its signature before touching the update slots.</p></article><article class="flow-step"><span class="flow-num">05</span><h3>Install & recover</h3><p>RAUC writes to the inactive slot. A healthy boot confirms it; a failed boot rolls back automatically.</p></article></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="container case-layout">
+        <div class="case-rail"><span class="rail-num">04</span><span>Highlights</span></div>
+        <div class="case-content" data-reveal>
+          <h2>Technical highlights</h2><div class="highlight-grid"><article class="highlight-card"><span class="highlight-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shield"/></svg></span><h3>A/B by design</h3><p>RAUC writes to the inactive slot, so the last known-good system stays untouched until the new image proves it can boot.</p></article><article class="highlight-card"><span class="highlight-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-lock"/></svg></span><h3>Defense in depth</h3><p>Device authentication and bundle signature verification are independent layers. A compromised download channel still cannot produce code execution.</p></article><article class="highlight-card"><span class="highlight-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cloud"/></svg></span><h3>Serverless control plane</h3><p>Workers handle the API, D1 stores device and release metadata, and R2 stores the bundles. The admin portal publishes and targets releases.</p></article><article class="highlight-card"><span class="highlight-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-refresh"/></svg></span><h3>Failure-first validation</h3><p>Power loss, corrupted artifacts, downgrades, and unauthorized devices were exercised as first-class test cases, not afterthoughts.</p></article></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="container case-layout">
+        <div class="case-rail"><span class="rail-num">05</span><span>Validation</span></div>
+        <div class="case-content" data-reveal>
+          <h2>Failure scenarios, exercised</h2><div class="validation-grid"><article class="validation-card"><span class="validation-tag">Validated</span><h3>Power loss mid-update</h3><p>The update writes to the inactive slot. Cutting power during installation never touches the running system; the device returns on the known-good slot.</p></article><article class="validation-card"><span class="validation-tag">Validated</span><h3>Corrupted bundle</h3><p>RAUC verifies the signed bundle before installation. A corrupted or tampered artifact is rejected at the trust boundary.</p></article><article class="validation-card"><span class="validation-tag">Validated</span><h3>Downgrade attempt</h3><p>The release flow checks the incoming version and refuses an unintended downgrade.</p></article><article class="validation-card"><span class="validation-tag">Validated</span><h3>Unauthorized device</h3><p>The backend authenticates the device before serving release metadata or artifacts, so an unknown device gets nothing.</p></article></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="container case-layout">
+        <div class="case-rail"><span class="rail-num">06</span><span>Stack</span></div>
+        <div class="case-content" data-reveal>
+          <h2>Stack</h2><div class="stack-grid"><div class="stack-group"><span class="stack-label">Build & boot</span><ul class="chip-list"><li class="chip">Yocto</li><li class="chip">RAUC</li><li class="chip">U-Boot</li><li class="chip">Embedded Linux</li></ul></div><div class="stack-group"><span class="stack-label">Cloud</span><ul class="chip-list"><li class="chip">Cloudflare Workers</li><li class="chip">D1</li><li class="chip">R2</li></ul></div><div class="stack-group"><span class="stack-label">Languages</span><ul class="chip-list"><li class="chip">Go</li><li class="chip">C</li><li class="chip">Rust</li><li class="chip">Bash</li></ul></div><div class="stack-group"><span class="stack-label">Trust & transport</span><ul class="chip-list"><li class="chip">TLS</li><li class="chip">PKI</li><li class="chip">Signed bundles</li></ul></div><div class="stack-group"><span class="stack-label">Target</span><ul class="chip-list"><li class="chip">Raspberry Pi</li></ul></div></div>
+        </div>
+      </div>
+    </section>
+
+  <section class="case-section case-next-wrap">
+    <div class="container">
+      <a class="next-project" href="seadrone.html">
+        <span class="next-copy">
+          <span class="next-label">Next project · 02 / 06</span>
+          <span class="next-title">SeaDrone</span>
+          <span class="next-category">Autonomous systems</span>
+        </span>
+        <span class="next-arrow"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
+      </a>
+      <a class="case-back" href="../index.html#projects"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-left"/></svg> Back to all projects</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a class="brand" href="../index.html" aria-label="Daoudi Mohamed Yacine — back to portfolio">
+      <span class="brand-mark" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-chip"/></svg></span>
+      <span class="brand-text">daoudi<span class="brand-dot">.</span></span>
+    </a>
+    <p class="footer-note">© <span id="year">2026</span> Daoudi Mohamed Yacine</p>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="https://github.com/pycine" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/daoudi-med-yacine" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:mohamedyacine.daoudi@proton.me">Email</a>
+      <a href="../index.html#projects">All projects</a>
+      <a href="#top" class="back-top">Top <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>

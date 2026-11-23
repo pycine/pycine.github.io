@@ -50,9 +50,9 @@ This is a static site, ready for GitHub Pages:
 
 No CI or build configuration is required.
 
-> Canonical and Open Graph URLs are set for the project site at
-> `https://pycine.github.io/portfolio/`. If you deploy this repository at the root domain
-> (`pycine.github.io`), update those URLs in `index.html` and `projects/*.html`.
+> Canonical and Open Graph URLs are set for `https://pycine.github.io/`, the GitHub Pages
+> site served from this repository. If you deploy to another domain, update the URLs in
+> `index.html` and `projects/*.html`.
 
 ## Customize
 
